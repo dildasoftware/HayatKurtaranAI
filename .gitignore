@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Ortam değişkenleri (API anahtarları - ASLA paylaşmayın!)
+.env
+
+# FAISS indeks dosyaları (yeniden oluşturulur)
+*.index
+*.faiss
+
+# Streamlit
+.streamlit/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
