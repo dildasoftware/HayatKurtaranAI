@@ -195,6 +195,13 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown(
+    '<div style="text-align:center;color:#ffd166;font-weight:700;margin:0.4rem 0 1rem 0;">'
+    'Ramazan Bayramınız Mübarek Olsun'
+    '</div>',
+    unsafe_allow_html=True
+)
+
 # ─── Sidebar ──────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown('<div class="sb-title">🚑 HayatKurtaran AI</div>', unsafe_allow_html=True)
