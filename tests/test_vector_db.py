@@ -16,6 +16,7 @@ def test_get_context_returns_empty_when_no_chunks(monkeypatch):
     # Simüle: initialize hiç chunk yükleyememiş
     monkeypatch.setattr(vector_db, "_chunks", [])
     monkeypatch.setattr(vector_db, "_index", None)
+    monkeypatch.setattr(vector_db, "initialize", lambda: None)
 
     ctx, sources, is_critical = vector_db.get_context("Test sorgu")
 
