@@ -7,6 +7,7 @@ import os
 import sys
 import io
 import time
+import logging
 
 # Windows encoding fix
 if sys.platform == "win32":
@@ -17,20 +18,17 @@ if sys.platform == "win32":
 
 from dotenv import load_dotenv  # pyre-ignore
 from backend.vector_db import get_context, initialize  # pyre-ignore
+from backend.config import (  # pyre-ignore
+    GEMINI_MODEL_CANDIDATES,
+    GEMINI_MAX_RETRIES,
+    GEMINI_RETRY_WAIT_SECONDS,
+)
 
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
-# Sirasyla deneyecegimiz modeller (biri kota dolarsa digeri denenir)
-MODEL_CANDIDATES = [
-    "gemini-2.5-flash-lite",
-    "gemini-flash-lite-latest",
-    "gemini-3.1-flash-lite-preview",
-]
-
-MAX_RETRIES = 2
-RETRY_WAIT = 1  # saniye
+logger = logging.getLogger(__name__)
 
 SYSTEM_PROMPT = (
     "Sen 'HayatKurtaran AI' adinda, Turkce konusan acil ilk yardim ve saglik asistanisin.\n"
@@ -72,26 +70,32 @@ def _setup_gemini():
         )
     from google import genai  # pyre-ignore
     _client = genai.Client(api_key=GEMINI_API_KEY)
-    print("[RAG] Gemini client OK")
+    logger.info("[RAG] Gemini client OK")
 
 
 def startup():
     global _initialized
     if _initialized:
         return
-    print("[RAG] Baslatiliyor...")
+    logger.info("[RAG] Baslatiliyor...")
     initialize()
     _setup_gemini()
     _initialized = True
-    print("[RAG] Hazir.")
+    logger.info("[RAG] Hazir.")
 
 
-def _call_gemini(prompt):
-    """Gemini API'yi retry ve model fallback ile cagir."""
-    last_error = None
+def _call_gemini(prompt: str) -> tuple[str | None, str | None]:
+    """Gemini API'yi retry ve model fallback ile cagir.
 
-    for model_name in MODEL_CANDIDATES:
-        for attempt in range(MAX_RETRIES):
+    Returns:
+        (text, error_type)
+        error_type: None | "quota" | "other"
+    """
+    last_error: Exception | None = None
+    last_error_type: str | None = None
+
+    for model_name in GEMINI_MODEL_CANDIDATES:
+        for attempt in range(GEMINI_MAX_RETRIES):
             try:
                 if _client is None:
                     continue
@@ -102,21 +106,27 @@ def _call_gemini(prompt):
                 )
                 text = response.text if response.text else ""
                 if text.strip():
-                    return text.strip()
+                    return text.strip(), None
             except Exception as e:
                 last_error = e
                 err_str = str(e)
                 if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
-                    print(f"[RAG] {model_name} kota hatası, hemen bir sonrakine geçiliyor.")
+                    last_error_type = "quota"
+                    logger.warning(
+                        "[RAG] %s kota hatasi, hemen bir sonrakine geciliyor: %s",
+                        model_name,
+                        err_str,
+                    )
                     break  # Kota doluysa bu modeli zorlama, diğerine geç
                 else:
-                    print(f"[RAG] {model_name} hata: {err_str}")
+                    last_error_type = "other"
+                    logger.error("[RAG] %s hata: %s", model_name, err_str)
                     break
 
-        print(f"[RAG] {model_name} basarisiz, sonraki model deneniyor...")
+        logger.warning("[RAG] %s basarisiz, sonraki model deneniyor...", model_name)
 
-    print(f"[RAG] Tum modeller basarisiz: {last_error}")
-    return None
+    logger.error("[RAG] Tum modeller basarisiz: %s", last_error)
+    return None, last_error_type
 
 
 def generate_answer(query):
@@ -141,20 +151,24 @@ def generate_answer(query):
         + "\n\nYukaridaki baglama dayanarak kisa ve maddeli cevap ver."
     )
 
-    raw = _call_gemini(full_prompt)
+    raw, error_type = _call_gemini(full_prompt)
     if not raw:
-        # SENIOR DEV FALLBACK: Eğer API çöktüyse veya kotalara takıldıysa, okuyucu metinsiz bırakılmaz.
-        # Direkt FAISS aramasından (VectorDB) dönen en ilgili metni ham olarak ekrana basarız!
-        # Sadece ilk 1 veya 2 kaynağı göster (kullanıcıyı metin veya buton boğulmasından kurtarmak için)
-        first_chunk_only = context_text.split('\n\n---\n\n')[0] if context_text else ""
-        
-        fallback_msg = (
-            "⚠️ **SİSTEM UYARISI: YAPAY ZEKA SUNUCULARI ŞU AN ÇOK YOĞUN (KOTA AŞIMI).**\n\n"
-            "Zaman kaybetmemeniz için bilgi tabanımızdan eşleşen **EN ÖNEMLİ DOĞRUDAN DÖKÜMAN KAYDI** aşağıda listelenmiştir:\n\n"
-            f"> {first_chunk_only}\n\n"
-            f"*(Lütfen dikkat: Bu metinler özetlenmemiş, orijinal kaynaktır. ACİL BİR DURUMSA DERHAL 112'Yİ ARAYIN!)*"
-        )
-        raw = fallback_msg
+        # a) Kota / yoğunluk hatası: kullaniciya net quota uyarisi
+        if error_type == "quota":
+            raw = QUOTA_ERROR_RESPONSE
+        else:
+            # b) Diger hatalarda: FAISS baglamindan ham kayit gosteren fallback
+            first_chunk_only = (
+                context_text.split("\n\n---\n\n")[0] if context_text else ""
+            )
+            raw = (
+                "⚠️ **SİSTEM UYARISI: YAPAY ZEKA SUNUCULARI ŞU AN ERİŞİLEMIYOR.**\n\n"
+                "Zaman kaybetmemeniz için bilgi tabanımızdan eşleşen "
+                "**EN ÖNEMLİ DOĞRUDAN DÖKÜMAN KAYDI** aşağıda listelenmiştir:\n\n"
+                f"> {first_chunk_only}\n\n"
+                "*(Lütfen dikkat: Bu metinler özetlenmemiş, orijinal kaynaktır. "
+                "ACİL BİR DURUMSA DERHAL 112'Yİ ARAYIN!)*"
+            )
 
     final = (CRITICAL_WARNING if is_critical else "") + raw
 

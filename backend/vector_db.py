@@ -17,19 +17,15 @@ import numpy as np  # type: ignore
 import faiss  # type: ignore
 from sentence_transformers import SentenceTransformer  # type: ignore
 
+from backend.config import (  # pyre-ignore
+    VECTOR_MODEL_NAME,
+    VECTOR_TOP_K,
+    VECTOR_SIMILARITY_THRESHOLD,
+    CRITICAL_KEYWORDS,
+)
+
 # ─── Konfigürasyon ─────────────────────────────────────────────────────────────
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
-MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"  # Türkçe desteği
-TOP_K = 20           # En alakalı kaç chunk dönüleceği
-SIMILARITY_THRESHOLD = 0.05  # Cosine benzerlik alt sınırı — düşük = geniş arama
-
-# Acil tetikleyici kelimeler - bunlar algılandığında öncelikli uyarı dönülür
-CRITICAL_KEYWORDS = [
-    "kalp krizi", "kalp durdu", "nefes almıyor", "nefes durdu",
-    "bilinç kaybı", "bilincini kaybetti", "bayıldı", "ölüyor",
-    "şiddetli kanama", "çok kan", "boğuluyor", "boğulma",
-    "anafilaksi", "alerjik şok", "inme", "felç"
-]
 
 # ─── Global Değişkenler (lazy-load ile doldurulur) ─────────────────────────────
 _model: SentenceTransformer = None
@@ -42,7 +38,7 @@ def _load_model() -> SentenceTransformer:
     global _model
     if _model is None:
         print("[VectorDB] Embedding modeli yükleniyor...")
-        _model = SentenceTransformer(MODEL_NAME)
+        _model = SentenceTransformer(VECTOR_MODEL_NAME)
         print("[VectorDB] Model hazır.")
     return _model
 
@@ -178,6 +174,10 @@ def _enhance_query(query: str) -> str:
         ek.append("şeker düşmesi hipoglisemi diyabetik koma")
     if "tansiyon" in ql or "bas agrisi" in ql:
         ek.append("hipertansiyon baş ağrısı kan basıncı")
+    if "cocuk" in ql or "bebek" in ql or "yeni dogan" in ql:
+        ek.append("bebek çocuk pediatrik acil durum")
+    if "hamile" in ql or "gebe" in ql or "hamilelik" in ql:
+        ek.append("gebelik hamilelik riskli gebelik acil durum")
         
     if ek:
         # Eski sorgunun ardına zenginleştirilmiş kelimeleri ekleyerek 
@@ -215,7 +215,7 @@ def get_context(query: str) -> tuple[str, list[dict], bool]:
     query_embedding = np.array(query_embedding, dtype=np.float32)
 
     # FAISS arama
-    actual_k = min(TOP_K, len(_chunks))
+    actual_k = min(VECTOR_TOP_K, len(_chunks))
     assert _index is not None
     scores, indices = _index.search(query_embedding, actual_k)
 
@@ -227,7 +227,7 @@ def get_context(query: str) -> tuple[str, list[dict], bool]:
             continue
 
         # Benzerlik eşiği kontrolü
-        if score < SIMILARITY_THRESHOLD:
+        if score < VECTOR_SIMILARITY_THRESHOLD:
             continue
 
         chunk = _chunks[idx].copy()

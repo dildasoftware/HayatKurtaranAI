@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ```
 
 ### 2. Gemini API Anahtarını Ekle
-`.env` dosyasını açın ve kendi anahtarınızı yazın:
+` .env.example ` dosyasını kopyalayarak `.env` oluşturun ve kendi anahtarınızı yazın:
 ```
 GEMINI_API_KEY=BURAYA_API_ANAHTARINIZI_YAZIN
 ```
@@ -22,6 +22,19 @@ API anahtarı almak için: https://aistudio.google.com/app/apikey
 ### 3. Uygulamayı Başlat
 ```bash
 streamlit run app.py
+```
+---
+## REST API (Opsiyonel)
+Streamlit’e ek olarak, aynı RAG motorunu REST ile kullanmak istersen:
+```bash
+uvicorn backend.api_server:app --reload --port 8000
+```
+
+Örnek istek:
+```bash
+curl -X POST "http://127.0.0.1:8000/chat" `
+  -H "Content-Type: application/json" `
+  -d "{\"query\":\"Arı soktu ne yapmalıyım?\"}"
 ```
 
 ---
@@ -56,7 +69,6 @@ life_saver_ai/
 │   ├── acil_durumlar.txt          # Acil durum yönergeleri
 │   └── saglik_onerileri.txt       # Günlük sağlık önerileri
 └── backend/
-    ├── __init__.py
     ├── vector_db.py               # FAISS + Sentence-Transformers
     └── rag_engine.py              # Gemini LLM + RAG Pipeline
 ```
