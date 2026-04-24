@@ -10,4 +10,10 @@ numpy>=1.26.0
 google-generativeai>=0.8.0
 
 # ─── Utilities ────────────────────────────────────────────────────────────────
-python-dotenv>=1.0.0
+python-dotenv
+Pillow
+gTTS
+audio-recorder-streamlit
+
+# ─── Testing ──────────────────────────────────────────────────────────────────
+pytest>=8.0.0

@@ -1,0 +1,663 @@
+[
+  {
+    "id": "Q001", "category": "kardiyak", "difficulty": "easy",
+    "query": "Kalp krizi belirtileri nelerdir?",
+    "expected_keywords": ["göğüs", "ağrı", "terleme", "nefes"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q002", "category": "kardiyak", "difficulty": "easy",
+    "query": "CPR nasıl yapılır?",
+    "expected_keywords": ["kompresyon", "göğüs", "kalp"],
+    "expected_severity": 1, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q003", "category": "kardiyak", "difficulty": "medium",
+    "query": "Babam göğsünü tutuyor ve terliyor, ne yapmalıyım?",
+    "expected_keywords": ["göğüs", "ağrı", "112", "kalp"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q004", "category": "kardiyak", "difficulty": "medium",
+    "query": "Kalp masajı kaç dakika yapılır?",
+    "expected_keywords": ["kompresyon", "dakika", "CPR"],
+    "expected_severity": 1, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q005", "category": "kardiyak", "difficulty": "hard",
+    "query": "AED cihazı nasıl kullanılır?",
+    "expected_keywords": ["AED", "defibrilatör", "elektrot"],
+    "expected_severity": 1, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q006", "category": "kardiyak", "difficulty": "hard",
+    "query": "Yetişkin ve çocukta CPR farkı nedir?",
+    "expected_keywords": ["kompresyon", "çocuk", "yetişkin"],
+    "expected_severity": 1, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q007", "category": "kardiyak", "difficulty": "medium",
+    "query": "Kalbim çok hızlı atıyor ne yapmalıyım?",
+    "expected_keywords": ["kalp", "nabız", "çarpıntı"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q008", "category": "kardiyak", "difficulty": "easy",
+    "query": "Göğsümde baskı hissediyorum acil mi?",
+    "expected_keywords": ["göğüs", "kalp", "ağrı"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q009", "category": "solunum", "difficulty": "easy",
+    "query": "Biri boğuluyor ne yapmalıyım?",
+    "expected_keywords": ["heimlich", "boğulma", "hava yolu"],
+    "expected_severity": 1, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q010", "category": "solunum", "difficulty": "easy",
+    "query": "Heimlich manevrası nasıl uygulanır?",
+    "expected_keywords": ["heimlich", "karın", "baskı"],
+    "expected_severity": 2, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q011", "category": "solunum", "difficulty": "medium",
+    "query": "Bebek bir şey yuttu nefes alamıyor",
+    "expected_keywords": ["bebek", "sırt", "vuruş", "hava yolu"],
+    "expected_severity": 1, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q012", "category": "solunum", "difficulty": "medium",
+    "query": "Astım krizi geçiren birine nasıl yardım ederim?",
+    "expected_keywords": ["astım", "inhaler", "nefes"],
+    "expected_severity": 3, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q013", "category": "solunum", "difficulty": "hard",
+    "query": "Nefes darlığı çeken kişiyi nasıl pozisyonlamalıyım?",
+    "expected_keywords": ["oturma", "pozisyon", "nefes"],
+    "expected_severity": 3, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q014", "category": "solunum", "difficulty": "easy",
+    "query": "Çocuk boğuluyor acil ne yapmalıyım?",
+    "expected_keywords": ["heimlich", "çocuk", "boğulma"],
+    "expected_severity": 1, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q015", "category": "solunum", "difficulty": "medium",
+    "query": "Suda boğulan birine ilk yardım nasıl yapılır?",
+    "expected_keywords": ["solunum", "CPR", "kurtarma"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q016", "category": "solunum", "difficulty": "hard",
+    "query": "Tansiyon pnömotoraks nedir nasıl anlaşılır?",
+    "expected_keywords": ["pnömotoraks", "göğüs", "solunum"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q017", "category": "travma", "difficulty": "easy",
+    "query": "Şiddetli kanamayı nasıl durdururum?",
+    "expected_keywords": ["kanama", "baskı", "turnike"],
+    "expected_severity": 2, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q018", "category": "travma", "difficulty": "easy",
+    "query": "Kırık şüphesinde ne yapmalıyım?",
+    "expected_keywords": ["kırık", "atel", "tespit", "hareket"],
+    "expected_severity": 3, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q019", "category": "travma", "difficulty": "medium",
+    "query": "Açık kırık var kemik gözüküyor ne yapmalıyım?",
+    "expected_keywords": ["açık", "kırık", "örtü", "hareket"],
+    "expected_severity": 2, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q020", "category": "travma", "difficulty": "medium",
+    "query": "Turnike nasıl uygulanır?",
+    "expected_keywords": ["turnike", "kanama", "sıkma"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q021", "category": "travma", "difficulty": "hard",
+    "query": "Kafa travmasında nelere dikkat edilmeli?",
+    "expected_keywords": ["kafa", "bilinç", "kusma", "travma"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q022", "category": "travma", "difficulty": "easy",
+    "query": "Burun kanaması nasıl durdurulur?",
+    "expected_keywords": ["burun", "öne", "eğil", "baskı"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q023", "category": "travma", "difficulty": "medium",
+    "query": "Yüksekten düştü sırt ağrısı var omurilik yaralanması olabilir mi?",
+    "expected_keywords": ["omurga", "hareket", "travma", "sabitle"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q024", "category": "travma", "difficulty": "medium",
+    "query": "Göze yabancı cisim kaçtı ne yapmalıyım?",
+    "expected_keywords": ["göz", "yıkama", "su"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q025", "category": "travma", "difficulty": "easy",
+    "query": "Burkulma ve incinmede RICE yöntemi nedir?",
+    "expected_keywords": ["RICE", "buz", "bandaj", "yükselt"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q026", "category": "travma", "difficulty": "hard",
+    "query": "ABCDE birincil değerlendirme protokolü nedir?",
+    "expected_keywords": ["ABCDE", "hava yolu", "solunum", "dolaşım"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q027", "category": "yanik", "difficulty": "easy",
+    "query": "Yanıkta ilk yardım nasıl yapılır?",
+    "expected_keywords": ["yanık", "su", "soğut"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q028", "category": "yanik", "difficulty": "easy",
+    "query": "Kaynar su döküldü elime ne yapmalıyım?",
+    "expected_keywords": ["yanık", "su", "soğut"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q029", "category": "yanik", "difficulty": "medium",
+    "query": "Yanık dereceleri nelerdir?",
+    "expected_keywords": ["derece", "yanık", "deri"],
+    "expected_severity": 5, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q030", "category": "yanik", "difficulty": "medium",
+    "query": "Kimyasal yanık oldu ne yapmalıyım?",
+    "expected_keywords": ["kimyasal", "su", "yıka"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q031", "category": "yanik", "difficulty": "hard",
+    "query": "Geniş yanıkta sıvı kaybı nasıl önlenir?",
+    "expected_keywords": ["yanık", "sıvı", "örtü"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q032", "category": "yanik", "difficulty": "easy",
+    "query": "Güneş yanığına ne iyi gelir?",
+    "expected_keywords": ["güneş", "yanık", "soğut"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q033", "category": "norolojik", "difficulty": "easy",
+    "query": "Felç belirtileri nelerdir?",
+    "expected_keywords": ["felç", "yüz", "kol", "konuşma"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q034", "category": "norolojik", "difficulty": "easy",
+    "query": "İnme geçiren birine ne yapmalıyım?",
+    "expected_keywords": ["inme", "112", "FAST"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q035", "category": "norolojik", "difficulty": "easy",
+    "query": "Epilepsi nöbetinde ne yapılır?",
+    "expected_keywords": ["nöbet", "epilepsi", "güvenli", "yan"],
+    "expected_severity": 3, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q036", "category": "norolojik", "difficulty": "medium",
+    "query": "Havale geçiren çocuğa ne yapmalıyım?",
+    "expected_keywords": ["havale", "ateş", "çocuk", "nöbet"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q037", "category": "norolojik", "difficulty": "medium",
+    "query": "Bayılan birine ilk yardım nedir?",
+    "expected_keywords": ["bayılma", "sırtüstü", "bacak"],
+    "expected_severity": 3, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q038", "category": "norolojik", "difficulty": "hard",
+    "query": "Status epileptikus nedir ne yapılmalı?",
+    "expected_keywords": ["nöbet", "süre", "dakika"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q039", "category": "norolojik", "difficulty": "hard",
+    "query": "BE-FAST skoru nedir neyi değerlendirir?",
+    "expected_keywords": ["FAST", "inme", "denge", "göz"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q040", "category": "zehirlenme", "difficulty": "easy",
+    "query": "Çocuğum deterjan içti ne yapmalıyım?",
+    "expected_keywords": ["zehirlenme", "114", "kusturma"],
+    "expected_severity": 2, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q041", "category": "zehirlenme", "difficulty": "easy",
+    "query": "Mantar zehirlenmesi belirtileri nelerdir?",
+    "expected_keywords": ["zehirlenme", "mantar", "bulantı"],
+    "expected_severity": 2, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q042", "category": "zehirlenme", "difficulty": "medium",
+    "query": "Karbon monoksit zehirlenmesinde ne yapılır?",
+    "expected_keywords": ["karbon monoksit", "hava", "temiz"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q043", "category": "zehirlenme", "difficulty": "medium",
+    "query": "Yılan ısırmasında ilk yardım nasıl yapılır?",
+    "expected_keywords": ["yılan", "hareket", "ısırma"],
+    "expected_severity": 2, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q044", "category": "zehirlenme", "difficulty": "hard",
+    "query": "Opiyat overdozunda nalokson nasıl uygulanır?",
+    "expected_keywords": ["nalokson", "opiyat", "solunum"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q045", "category": "zehirlenme", "difficulty": "hard",
+    "query": "Toksidrom nedir ve türleri nelerdir?",
+    "expected_keywords": ["toksidrom", "zehirlenme", "antidot"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q046", "category": "zehirlenme", "difficulty": "easy",
+    "query": "Akrep sokmasında ne yapılır?",
+    "expected_keywords": ["akrep", "sokma", "buz"],
+    "expected_severity": 2, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q047", "category": "alerji", "difficulty": "easy",
+    "query": "Anafilaktik şok nedir ne yapılır?",
+    "expected_keywords": ["anafilaksi", "adrenalin", "EpiPen"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q048", "category": "alerji", "difficulty": "easy",
+    "query": "Arı sokmasında ilk yardım",
+    "expected_keywords": ["arı", "sokma", "iğne", "buz"],
+    "expected_severity": 3, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q049", "category": "alerji", "difficulty": "medium",
+    "query": "Alerjik reaksiyonda boğazım şişiyor ne yapmalıyım?",
+    "expected_keywords": ["anafilaksi", "alerji", "hava yolu", "112"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q050", "category": "alerji", "difficulty": "medium",
+    "query": "EpiPen nasıl kullanılır?",
+    "expected_keywords": ["EpiPen", "adrenalin", "uyluk"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q051", "category": "metabolik", "difficulty": "easy",
+    "query": "Hipoglisemi belirtileri nelerdir?",
+    "expected_keywords": ["şeker", "titreme", "terleme", "hipoglisemi"],
+    "expected_severity": 3, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q052", "category": "metabolik", "difficulty": "easy",
+    "query": "Şekerim düştü ne yapmalıyım?",
+    "expected_keywords": ["şeker", "glikoz", "yemek"],
+    "expected_severity": 3, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q053", "category": "metabolik", "difficulty": "medium",
+    "query": "Diyabetik ketoasidoz belirtileri nelerdir?",
+    "expected_keywords": ["DKA", "ketoasidoz", "diyabet"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q054", "category": "metabolik", "difficulty": "medium",
+    "query": "Tansiyonum çok yükseldi 180 oldu ne yapmalıyım?",
+    "expected_keywords": ["tansiyon", "hipertansiyon", "kriz"],
+    "expected_severity": 3, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q055", "category": "metabolik", "difficulty": "hard",
+    "query": "Tiroid krizi belirtileri ve ilk müdahale nedir?",
+    "expected_keywords": ["tiroid", "ateş", "çarpıntı"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q056", "category": "pediatrik", "difficulty": "easy",
+    "query": "Bebekte ateş düşürme yöntemleri nelerdir?",
+    "expected_keywords": ["ateş", "bebek", "ılık"],
+    "expected_severity": 3, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q057", "category": "pediatrik", "difficulty": "easy",
+    "query": "Bebekte CPR nasıl yapılır?",
+    "expected_keywords": ["bebek", "CPR", "parmak", "kompresyon"],
+    "expected_severity": 1, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q058", "category": "pediatrik", "difficulty": "medium",
+    "query": "Çocukta ishal ve kusma olduğunda ne yapmalıyım?",
+    "expected_keywords": ["ishal", "sıvı", "dehidrasyon"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q059", "category": "pediatrik", "difficulty": "medium",
+    "query": "Ateşli havale geçiren çocuk için ne yapılır?",
+    "expected_keywords": ["havale", "ateş", "çocuk"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q060", "category": "pediatrik", "difficulty": "hard",
+    "query": "Yenidoğan resüsitasyonu için NRP protokolü nedir?",
+    "expected_keywords": ["yenidoğan", "NRP", "solunum"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q061", "category": "sicak_soguk", "difficulty": "easy",
+    "query": "Sıcak çarpması belirtileri ve ilk yardımı nedir?",
+    "expected_keywords": ["sıcak", "soğut", "su"],
+    "expected_severity": 2, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q062", "category": "sicak_soguk", "difficulty": "easy",
+    "query": "Hipotermi belirtileri nelerdir?",
+    "expected_keywords": ["hipotermi", "soğuk", "ısıt"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q063", "category": "sicak_soguk", "difficulty": "medium",
+    "query": "Donuk ve soğuk yaralanması ilk yardımı",
+    "expected_keywords": ["donuk", "ılık", "soğuk"],
+    "expected_severity": 3, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q064", "category": "elektrik", "difficulty": "easy",
+    "query": "Elektrik çarptı ne yapmalıyım?",
+    "expected_keywords": ["elektrik", "kaynak", "kes", "dokunma"],
+    "expected_severity": 1, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q065", "category": "elektrik", "difficulty": "medium",
+    "query": "Yıldırım çarptığında ilk yardım nasıl yapılır?",
+    "expected_keywords": ["yıldırım", "CPR", "elektrik"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q066", "category": "genel_yanik", "difficulty": "easy",
+    "query": "Yanık üzerine ne sürülür?",
+    "expected_keywords": ["yanık", "su", "krem"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q067", "category": "genel_yanik", "difficulty": "medium",
+    "query": "Yanık balonunda ne yapmalıyım patlatmalı mıyım?",
+    "expected_keywords": ["yanık", "balon", "patlatma"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q068", "category": "sepsis", "difficulty": "medium",
+    "query": "Sepsis belirtileri nelerdir?",
+    "expected_keywords": ["sepsis", "ateş", "enfeksiyon"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q069", "category": "sepsis", "difficulty": "hard",
+    "query": "qSOFA skoru nasıl hesaplanır?",
+    "expected_keywords": ["qSOFA", "solunum", "bilinç", "tansiyon"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q070", "category": "obstetrik", "difficulty": "medium",
+    "query": "Gebede acil doğum sırasında ne yapılır?",
+    "expected_keywords": ["doğum", "gebe", "göbek"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q071", "category": "obstetrik", "difficulty": "hard",
+    "query": "Preeklampsi belirtileri nelerdir?",
+    "expected_keywords": ["preeklampsi", "tansiyon", "gebe"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q072", "category": "obstetrik", "difficulty": "hard",
+    "query": "Postpartum kanama nasıl kontrol edilir?",
+    "expected_keywords": ["postpartum", "kanama", "masaj"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q073", "category": "kbrn", "difficulty": "hard",
+    "query": "Kimyasal maddeye maruz kalındığında ne yapılır?",
+    "expected_keywords": ["kimyasal", "dekontaminasyon", "yıka"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q074", "category": "kbrn", "difficulty": "hard",
+    "query": "Radyasyon maruziyetinde ilk müdahale nedir?",
+    "expected_keywords": ["radyasyon", "kontaminasyon", "uzaklaş"],
+    "expected_severity": 1, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q075", "category": "travma", "difficulty": "medium",
+    "query": "Bıçak saplandı çıkarmalı mıyım?",
+    "expected_keywords": ["delici", "çıkarma", "baskı"],
+    "expected_severity": 2, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q076", "category": "travma", "difficulty": "easy",
+    "query": "Diş kırıldı veya düştü ne yapmalıyım?",
+    "expected_keywords": ["diş", "süt"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q077", "category": "genel_ilkyardim", "difficulty": "easy",
+    "query": "İlkyardım çantasında neler olmalı?",
+    "expected_keywords": ["çanta", "bandaj", "malzeme"],
+    "expected_severity": 5, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q078", "category": "genel_ilkyardim", "difficulty": "easy",
+    "query": "Koma pozisyonu nasıl verilir?",
+    "expected_keywords": ["koma", "yan", "pozisyon"],
+    "expected_severity": 3, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q079", "category": "genel_ilkyardim", "difficulty": "medium",
+    "query": "Şok belirtileri nelerdir ve ne yapılmalı?",
+    "expected_keywords": ["şok", "bacak", "sıcak", "solunum"],
+    "expected_severity": 2, "expected_source": "acil_durumlar"
+  },
+  {
+    "id": "Q080", "category": "genel_ilkyardim", "difficulty": "easy",
+    "query": "Yara nasıl temizlenir ve sarılır?",
+    "expected_keywords": ["yara", "temizle", "bandaj"],
+    "expected_severity": 4, "expected_source": "ilk_yardim_bilgileri"
+  },
+  {
+    "id": "Q081", "category": "saglik", "difficulty": "easy",
+    "query": "Günde ne kadar su içmeliyim?",
+    "expected_keywords": ["su", "litre", "hidrasyon"],
+    "expected_severity": 5, "expected_source": "saglik_onerileri"
+  },
+  {
+    "id": "Q082", "category": "saglik", "difficulty": "easy",
+    "query": "Sağlıklı beslenme önerileri nelerdir?",
+    "expected_keywords": ["beslenme", "vitamin", "sebze"],
+    "expected_severity": 5, "expected_source": "saglik_onerileri"
+  },
+  {
+    "id": "Q083", "category": "saglik", "difficulty": "easy",
+    "query": "Stres azaltma yöntemleri nelerdir?",
+    "expected_keywords": ["stres", "nefes", "egzersiz"],
+    "expected_severity": 5, "expected_source": "saglik_onerileri"
+  },
+  {
+    "id": "Q084", "category": "saglik", "difficulty": "easy",
+    "query": "İyi uyku için ne yapmalıyım?",
+    "expected_keywords": ["uyku", "saat", "düzen"],
+    "expected_severity": 5, "expected_source": "saglik_onerileri"
+  },
+  {
+    "id": "Q085", "category": "saglik", "difficulty": "medium",
+    "query": "Egzersiz yaparken nelere dikkat etmeliyim?",
+    "expected_keywords": ["egzersiz", "ısınma", "kalp"],
+    "expected_severity": 5, "expected_source": "saglik_onerileri"
+  },
+  {
+    "id": "Q086", "category": "saglik", "difficulty": "medium",
+    "query": "Bağışıklık sistemini güçlendirmek için ne yapmalıyım?",
+    "expected_keywords": ["bağışıklık", "vitamin", "uyku"],
+    "expected_severity": 5, "expected_source": "saglik_onerileri"
+  },
+  {
+    "id": "Q087", "category": "saglik", "difficulty": "easy",
+    "query": "El yıkama neden önemli nasıl yapılır?",
+    "expected_keywords": ["el", "yıka", "hijyen"],
+    "expected_severity": 5, "expected_source": "saglik_onerileri"
+  },
+  {
+    "id": "Q088", "category": "saglik", "difficulty": "medium",
+    "query": "Diyabet hastaları nelere dikkat etmeli?",
+    "expected_keywords": ["diyabet", "şeker", "insülin"],
+    "expected_severity": 5, "expected_source": "saglik_onerileri"
+  },
+  {
+    "id": "Q089", "category": "saglik", "difficulty": "easy",
+    "query": "Sigara bırakma için öneriler nelerdir?",
+    "expected_keywords": ["sigara", "nikotin", "bırak"],
+    "expected_severity": 5, "expected_source": "saglik_onerileri"
+  },
+  {
+    "id": "Q090", "category": "saglik", "difficulty": "easy",
+    "query": "Kalp sağlığını korumak için ne yapmalıyım?",
+    "expected_keywords": ["kalp", "egzersiz", "beslenme"],
+    "expected_severity": 5, "expected_source": "saglik_onerileri"
+  },
+
+  {
+    "id": "OOS01", "category": "out_of_scope", "difficulty": "easy",
+    "query": "Bitcoin nedir nasıl alınır?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS02", "category": "out_of_scope", "difficulty": "easy",
+    "query": "En iyi pizza tarifi nedir?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS03", "category": "out_of_scope", "difficulty": "easy",
+    "query": "Türkiye'nin başkenti neresidir?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS04", "category": "out_of_scope", "difficulty": "easy",
+    "query": "Python programlama dili nedir?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS05", "category": "out_of_scope", "difficulty": "easy",
+    "query": "Araba lastiği nasıl değiştirilir?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS06", "category": "out_of_scope", "difficulty": "easy",
+    "query": "İstanbul'da hava durumu nasıl?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS07", "category": "out_of_scope", "difficulty": "easy",
+    "query": "Futbol maçı saat kaçta?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS08", "category": "out_of_scope", "difficulty": "easy",
+    "query": "Blockchain teknolojisi nedir?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS09", "category": "out_of_scope", "difficulty": "easy",
+    "query": "En güzel tatil yerleri neresidir?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS10", "category": "out_of_scope", "difficulty": "easy",
+    "query": "Matematik formülleri ve denklemler",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS11", "category": "out_of_scope", "difficulty": "medium",
+    "query": "Yapay zeka nedir geleceği nasıl olacak?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS12", "category": "out_of_scope", "difficulty": "medium",
+    "query": "Kedimin tüyleri dökülüyor ne yapmalıyım?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS13", "category": "out_of_scope", "difficulty": "medium",
+    "query": "Ücretli yollar nasıl çalışır?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS14", "category": "out_of_scope", "difficulty": "medium",
+    "query": "Borsa nasıl öğrenilir?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS15", "category": "out_of_scope", "difficulty": "medium",
+    "query": "Çamaşır makinesi nasıl temizlenir?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS16", "category": "out_of_scope", "difficulty": "medium",
+    "query": "En iyi film önerileri 2025",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS17", "category": "out_of_scope", "difficulty": "medium",
+    "query": "Elektrik faturasını nasıl düşürürüm?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS18", "category": "out_of_scope", "difficulty": "medium",
+    "query": "Kredi kartı borcu nasıl kapatılır?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS19", "category": "out_of_scope", "difficulty": "hard",
+    "query": "Sağlıklı bir yemek pişirmek istiyorum tarif verin",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  },
+  {
+    "id": "OOS20", "category": "out_of_scope", "difficulty": "hard",
+    "query": "Kafein fazla içmek zararlı mı genel olarak?",
+    "expected_keywords": [],
+    "expected_severity": 5, "expected_source": "none"
+  }
+]

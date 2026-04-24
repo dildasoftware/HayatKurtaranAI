@@ -1,0 +1,591 @@
+{
+  "total_queries": 110,
+  "accuracy": 0.5,
+  "macro_f1": 0.4694,
+  "weighted_f1": 0.4661,
+  "qwk": 0.2181,
+  "undertriage_rate": 0.4909,
+  "overtriage_rate": 0.0091,
+  "critical_undertriage_rate": 0.6727,
+  "per_class": {
+    "1": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 26,
+      "precision": 1.0,
+      "recall": 0.1875,
+      "f1": 0.3158,
+      "support": 32
+    },
+    "2": {
+      "tp": 10,
+      "fp": 2,
+      "fn": 13,
+      "precision": 0.8333,
+      "recall": 0.4348,
+      "f1": 0.5714,
+      "support": 23
+    },
+    "3": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 9,
+      "precision": 0.75,
+      "recall": 0.25,
+      "f1": 0.375,
+      "support": 12
+    },
+    "4": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 7,
+      "precision": 1.0,
+      "recall": 0.3636,
+      "f1": 0.5333,
+      "support": 11
+    },
+    "5": {
+      "tp": 32,
+      "fp": 52,
+      "fn": 0,
+      "precision": 0.381,
+      "recall": 1.0,
+      "f1": 0.5517,
+      "support": 32
+    }
+  },
+  "confusion_matrix": [
+    [
+      6,
+      2,
+      0,
+      0,
+      24
+    ],
+    [
+      0,
+      10,
+      0,
+      0,
+      13
+    ],
+    [
+      0,
+      0,
+      3,
+      0,
+      9
+    ],
+    [
+      0,
+      0,
+      1,
+      4,
+      6
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      32
+    ]
+  ],
+  "misclassifications": [
+    {
+      "id": "Q002",
+      "query": "CPR nasıl yapılır?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q003",
+      "query": "Babam göğsünü tutuyor ve terliyor, ne yapmalıyım?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q004",
+      "query": "Kalp masajı kaç dakika yapılır?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q005",
+      "query": "AED cihazı nasıl kullanılır?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q006",
+      "query": "Yetişkin ve çocukta CPR farkı nedir?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q007",
+      "query": "Kalbim çok hızlı atıyor ne yapmalıyım?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q009",
+      "query": "Biri boğuluyor ne yapmalıyım?",
+      "expected": 1,
+      "predicted": 2,
+      "correct": false,
+      "confidence": 0.85,
+      "reasoning": "Boğulma riski"
+    },
+    {
+      "id": "Q010",
+      "query": "Heimlich manevrası nasıl uygulanır?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q011",
+      "query": "Bebek bir şey yuttu nefes alamıyor",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q013",
+      "query": "Nefes darlığı çeken kişiyi nasıl pozisyonlamalıyım?",
+      "expected": 3,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q014",
+      "query": "Çocuk boğuluyor acil ne yapmalıyım?",
+      "expected": 1,
+      "predicted": 2,
+      "correct": false,
+      "confidence": 0.85,
+      "reasoning": "Boğulma riski"
+    },
+    {
+      "id": "Q015",
+      "query": "Suda boğulan birine ilk yardım nasıl yapılır?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q016",
+      "query": "Tansiyon pnömotoraks nedir nasıl anlaşılır?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.75,
+      "reasoning": "Koruyucu sağlık"
+    },
+    {
+      "id": "Q020",
+      "query": "Turnike nasıl uygulanır?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q024",
+      "query": "Göze yabancı cisim kaçtı ne yapmalıyım?",
+      "expected": 4,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q026",
+      "query": "ABCDE birincil değerlendirme protokolü nedir?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q027",
+      "query": "Yanıkta ilk yardım nasıl yapılır?",
+      "expected": 4,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q028",
+      "query": "Kaynar su döküldü elime ne yapmalıyım?",
+      "expected": 4,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q034",
+      "query": "İnme geçiren birine ne yapmalıyım?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q035",
+      "query": "Epilepsi nöbetinde ne yapılır?",
+      "expected": 3,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q036",
+      "query": "Havale geçiren çocuğa ne yapmalıyım?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q037",
+      "query": "Bayılan birine ilk yardım nedir?",
+      "expected": 3,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q038",
+      "query": "Status epileptikus nedir ne yapılmalı?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q039",
+      "query": "BE-FAST skoru nedir neyi değerlendirir?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q040",
+      "query": "Çocuğum deterjan içti ne yapmalıyım?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q041",
+      "query": "Mantar zehirlenmesi belirtileri nelerdir?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q044",
+      "query": "Opiyat overdozunda nalokson nasıl uygulanır?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q045",
+      "query": "Toksidrom nedir ve türleri nelerdir?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q050",
+      "query": "EpiPen nasıl kullanılır?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q051",
+      "query": "Hipoglisemi belirtileri nelerdir?",
+      "expected": 3,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q052",
+      "query": "Şekerim düştü ne yapmalıyım?",
+      "expected": 3,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q053",
+      "query": "Diyabetik ketoasidoz belirtileri nelerdir?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q054",
+      "query": "Tansiyonum çok yükseldi 180 oldu ne yapmalıyım?",
+      "expected": 3,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q055",
+      "query": "Tiroid krizi belirtileri ve ilk müdahale nedir?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q056",
+      "query": "Bebekte ateş düşürme yöntemleri nelerdir?",
+      "expected": 3,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q057",
+      "query": "Bebekte CPR nasıl yapılır?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q059",
+      "query": "Ateşli havale geçiren çocuk için ne yapılır?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q060",
+      "query": "Yenidoğan resüsitasyonu için NRP protokolü nedir?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q061",
+      "query": "Sıcak çarpması belirtileri ve ilk yardımı nedir?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q062",
+      "query": "Hipotermi belirtileri nelerdir?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q063",
+      "query": "Donuk ve soğuk yaralanması ilk yardımı",
+      "expected": 3,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q065",
+      "query": "Yıldırım çarptığında ilk yardım nasıl yapılır?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q066",
+      "query": "Yanık üzerine ne sürülür?",
+      "expected": 4,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q067",
+      "query": "Yanık balonunda ne yapmalıyım patlatmalı mıyım?",
+      "expected": 4,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q068",
+      "query": "Sepsis belirtileri nelerdir?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q069",
+      "query": "qSOFA skoru nasıl hesaplanır?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q070",
+      "query": "Gebede acil doğum sırasında ne yapılır?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q071",
+      "query": "Preeklampsi belirtileri nelerdir?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q072",
+      "query": "Postpartum kanama nasıl kontrol edilir?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q074",
+      "query": "Radyasyon maruziyetinde ilk müdahale nedir?",
+      "expected": 1,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q075",
+      "query": "Bıçak saplandı çıkarmalı mıyım?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q076",
+      "query": "Diş kırıldı veya düştü ne yapmalıyım?",
+      "expected": 4,
+      "predicted": 3,
+      "correct": false,
+      "confidence": 0.75,
+      "reasoning": "Kırık şüphesi"
+    },
+    {
+      "id": "Q078",
+      "query": "Koma pozisyonu nasıl verilir?",
+      "expected": 3,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q079",
+      "query": "Şok belirtileri nelerdir ve ne yapılmalı?",
+      "expected": 2,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    },
+    {
+      "id": "Q080",
+      "query": "Yara nasıl temizlenir ve sarılır?",
+      "expected": 4,
+      "predicted": 5,
+      "correct": false,
+      "confidence": 0.3,
+      "reasoning": "Acil durum pattern'ı tespit edilemedi — genel bilgi olarak işleniyor"
+    }
+  ]
+}

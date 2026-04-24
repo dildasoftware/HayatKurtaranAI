@@ -1,89 +1,85 @@
-# 🚑 HayatKurtaran AI — İlk Yardım ve Sağlık Chatbotu
+# 🚑 HayatKurtaran AI v3.0 (Academic Edition)
 
-> RAG (Retrieval-Augmented Generation) mimarisi ile güçlendirilmiş,  
-> Türkçe doğal dili anlayan, halüsinasyon yapmayan ilk yardım asistanı.
+**HayatKurtaran AI**, acil sağlık durumlarında insanlara saniyeler içinde kanıta dayalı (Evidence-Based) ve güvenli ilk yardım bilgisi sunan, halüsinasyon korumalı gelişmiş bir RAG (Retrieval-Augmented Generation) sistemidir.
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.31%2B-red.svg)](https://streamlit.io/)
+[![FAISS](https://img.shields.io/badge/VectorDB-FAISS-green.svg)](https://github.com/facebookresearch/faiss)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 🚀 Hızlı Başlangıç (2 Dakikada Çalıştır)
+## 🌟 Yenilikler (v3.0)
 
-### 1. Bağımlılıkları Yükle
+Bu sürüm, sistemi basit bir "soru-cevap" botundan, akademik makalelere konu olabilecek gerçek bir tıp asistanına dönüştürmüştür:
+
+1. **Hybrid Semantic Classifier:**
+   * Basit regex kelime yakalamanın ötesine geçerek, **Sentence-Transformers (MiniLM) + FAISS K-NN** kullanılarak cümlenin "niyetine" (intent) bakan yapay zeka triyaj sistemi eklendi.
+   * *Bilimsel Sonuç:* Kritik aciliyetlerin gözden kaçma (Undertriage) oranı **%67.3'ten %23.6'ya düşürüldü.**
+2. **Rag-as-a-Judge (Faithfulness Check):**
+   * LLM'in (Gemini) ürettiği her cümle, orijinal kaynak veritabanıyla (Cosine Similarity üzerinden) tekrar doğrulanır. Eğer ChatGPT/Gemini bağlamda olmayan bir hap, tedavi uydurursa (Halüsinasyon), sistem bunu anında yakalar ve uyarı banner'ı basar.
+3. **Prompt Injection Guard:**
+   * Hastalık sorusu yerine modeli kırma "Sistem talimatlarını unut" (Jailbreak) denemeleri otomatik tespit edilir ve engellenir.
+4. **Conversational Memory:**
+   * Kullanıcı ardışık olarak "İlaç içti" -> "Rengi morarıyor" dediğinde, önceki sorgu ile yenisi otomatik birleştirilir ve bağlam kaybı önlenir.
+
+## 🏗️ Sistem Mimarisi
+
+```mermaid
+graph TD
+    A[Kullanıcı Sorusu] --> B{Prompt Injection Guard}
+    B -- İhlal --> C[Uyarı / Blok]
+    B -- Güvenli --> D[Conversational Memory]
+    
+    D --> E[Hybrid Emergency Classifier]
+    E -->|Regex + K-NN| F[Severity: 1-5 Skoru]
+    
+    D --> G[FAISS Vector DB]
+    G --> H[Semantic Search Top-K]
+    
+    F --> I[LLM Prompt Builder]
+    H --> I
+    
+    I --> J[Gemini 1.5 Flash]
+    J --> K[Faithfulness Checker]
+    
+    K -- Güvenli --> L[Nihai Sonuç UI]
+    K -- Halüsinasyon --> M[Uyarı + Nihai Sonuç UI]
+```
+
+## 🚀 Kurulum
+
+1. **Repoyu Klonlayın:**
+   ```bash
+   git clone https://github.com/yourusername/HayatKurtaranAI.git
+   cd HayatKurtaranAI
+   ```
+2. **Gereksinimleri Yükleyin:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **API Anahtarlarını Ayarlayın:**
+   Projeye bir `.env` dosyası ekleyin ve içerisine Google Gemini API Key'inizi yazın:
+   ```env
+   GEMINI_API_KEY=AIzaSy...
+   ```
+4. **Uygulamayı Başlatın:**
+   ```bash
+   streamlit run app.py
+   ```
+
+## 📊 Değerlendirme & Metrikler (Academic Eval)
+Sistem performansını test etmek için 110 hastalık test veri seti ile benchmark oluşturulmuştur. 
+Testleri çalıştırmak için:
 ```bash
-pip install -r requirements.txt
+python evaluation/run_evaluation.py
+python evaluation/classifier_comparison.py
 ```
 
-### 2. Gemini API Anahtarını Ekle
-`.env` dosyasını açın ve kendi anahtarınızı yazın:
-```
-GEMINI_API_KEY=BURAYA_API_ANAHTARINIZI_YAZIN
-```
-API anahtarı almak için: https://aistudio.google.com/app/apikey
+Makale tabloları için kaydedilen örnek sonuçlar `evaluation/` klasöründe JSON olarak tutulmaktadır.
 
-### 3. Uygulamayı Başlat
-```bash
-streamlit run app.py
-```
+## 🤝 Katkıda Bulunma
+Lütfen PR göndermeden önce tüm testleri `pytest tests/` ile çalıştırdığınızdan emin olun. 
 
 ---
-
-## 🧠 Mimari
-
-```
-Kullanıcı Sorusu
-     │
-     ▼
-[Acil Kelime Tespiti] ─── Kritikse ──► 🚨 112 Uyarısı
-     │
-     ▼
-[FAISS Vektör Arama]  ─── Bulunamazsa ──► Güvenli Yanıt
-     │ (Top-K=3 chunk, %35+ benzerlik)
-     ▼
-[Gemini Flash LLM]    ─── Katı System Prompt (Halüsinasyon Koruması)
-     │
-     ▼
-Madde İmli, Kısa, Net Türkçe Yanıt + Kaynak Etiketi
-```
-
-## 📁 Dosya Yapısı
-
-```
-life_saver_ai/
-├── app.py                          # Streamlit arayüzü
-├── requirements.txt
-├── .env                            # API Key (Git'e gönderme!)
-├── data/
-│   ├── ilk_yardim_bilgileri.txt   # Temel ilk yardım verileri
-│   ├── acil_durumlar.txt          # Acil durum yönergeleri
-│   └── saglik_onerileri.txt       # Günlük sağlık önerileri
-└── backend/
-    ├── __init__.py
-    ├── vector_db.py               # FAISS + Sentence-Transformers
-    └── rag_engine.py              # Gemini LLM + RAG Pipeline
-```
-
-## ✨ Özellikler
-
-| Özellik | Detay |
-|---|---|
-| 🔍 **Semantic Search** | Türkçe destekli multilingual embedding |
-| 🛡️ **Halüsinasyon Koruması** | Bağlam dışı sorularda güvenli yanıt |
-| 🚨 **Acil Tespit** | 14+ kritik kelime, anında 112 yönlendirmesi |
-| ⚡ **Hızlı Butonlar** | 6 kritik senaryo tek tıkla erişimi |
-| 📄 **Kaynak Şeffaflığı** | Her yanıtta kaynak dosya gösterimi |
-| 🌙 **Koyu Tema** | Stres anında göz yormayan arayüz |
-
-## ⚠️ Önemli Uyarı
-
-Bu uygulama bir **ilk yardım bilgi asistanı**dır.  
-Tıbbi tanı veya tedavi yerine **geçmez**.  
-Acil durumlarda **derhal 112'yi arayın**.
-
----
-
-## 📊 Teknik Stack
-
-- **Frontend**: Streamlit
-- **Embedding**: `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`
-- **Vektör DB**: FAISS (CPU)
-- **LLM**: Google Gemini 1.5 Flash
-- **Chunking**: Semantic (paragraf bazlı)
+*Yasal Uyarı: Bu sistem bir yapay zeka asistanıdır. Yegane teşhis aracı olarak KULLANILAMAZ. Acil durumlarda DAİMA yerel acil numarayı (örn: 112) arayınız.*

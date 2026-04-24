@@ -1,124 +1,902 @@
-YANIKLAR VE TERMAL HASAR
+========================================
+İLKYARDIM & ACİL DURUM RAG VERİ SETİ
+Versiyon: 2.0 | Derleme: Nisan 2025
+========================================
+KAYNAKLAR:
+- T.C. Sağlık Bakanlığı İlkyardım Eğitim Kitabı (2011)
+- American Heart Association (AHA) CPR/ECC Kılavuzu 2025
+- AHA & American Red Cross 2024 First Aid Guidelines (Circulation, Kasım 2024)
+- AHA & AAP 2024 Focused Update: Drowning Resuscitation (Circulation, Aralık 2024)
+- World Allergy Organization (WAO) Anaphylaxis Guidance 2020
+- AAAAI/ACAAI Anaphylaxis Practice Parameter Update 2023
+- SAMHSA Opioid Overdose Prevention Toolkit
+- Wilderness Medical Society Drowning CPG 2024 Update
+- Mayo Clinic / Cleveland Clinic klinik rehberler
 
-Yanıkta doğru müdahale hayat kurtarır, yanlış müdahale doku hasarını artırır.
-Etkilenen bölgeyi 10-15 dakika soğuk (buzlu değil) akan su altında tutun.
-Kabarcıkları kesinlikle patlatmayın, içindeki sıvı koruyucudur.
-Yaranın etrafındaki takı veya dar giysileri yara şişmeden önce dikkatlice çıkarın.
-Temiz ve tüy bırakmayan nemli bir bezle bölgeyi gevşekçe örtün.
-KESİNLİKLE sürülmemesi gerekenler: yoğurt, diş macunu, yağ veya buz.
-Bu maddeler ısıyı hapseder ve enfeksiyon riskini artırır.
-Geniş yanıklarda, yüz/el/genital bölge yanıklarında derhal 112 arayın.
+========================================
+BÖLÜM 1: TEMEL İLKYARDIM TANIMI VE İLKELERİ
+========================================
 
-KESİKLER VE KANAMALAR
+[TANIM]
+İlkyardım: Herhangi bir kaza veya yaşamı tehlikeye düşüren durumda, sağlık görevlilerinin yardımı sağlanıncaya kadar hayatın kurtarılması ya da durumun kötüye gitmesini önlemek amacıyla olay yerinde, tıbbi araç gereç aranmaksızın mevcut araç-gereçle yapılan ilaçsız uygulamalardır.
+Kaynak: T.C. Sağlık Bakanlığı
 
-Ciddi bir kanamayı durdurmak için şu adımları izleyin:
-Kanama varsa temiz bir bez veya gazlı bezle doğrudan yaraya kuvvetlice bastırın.
-Kanama durana kadar baskıyı kaldırmayın, beze bakmayın.
-Kanamanın durmaması halinde üstüne ek bez ekleyin, asla ilk bezi çıkarmayın.
-Yaralı bölgeyi kalp seviyesinin üstünde tutmaya çalışın.
-Eğer yara derinse veya kanama 15 dakika içinde durmuyor ise derhal 112 arayın.
-Yarada batan bir cisim (cam, bıçak vb.) varsa asla çıkarmaya çalışmayın; etrafını destekleyerek sabitleyin.
+[AMAÇLAR]
+- Hayati tehlikenin ortadan kaldırılması
+- Yaşamsal fonksiyonların sürdürülmesi
+- Hasta/yaralının durumunun kötüleşmesinin önlenmesi
+- İyileşmenin kolaylaştırılması
 
-BAYILMA VE BİLİNÇ KAYBI
+[TEMEL UYGULAMA — KBK]
+Koruma: Olay yerindeki tehlikeleri belirleyerek güvenli çevre oluşturmak.
+Bildirme: Olayı mümkün olduğunca hızlı 112'ye bildirmek.
+Kurtarma (Müdahale): Hızlı ve sakin biçimde müdahale etmek.
 
-Bayılan kişiye nasıl müdahale edilir:
-Kişiyi hemen sırtüstü yatırın.
-Bacaklarını yaklaşık 30 cm havaya kaldırarak şok pozisyonunu uygulayın; bu beyne kan gitmesini sağlar.
-Hava yolunu açık tutun ve boyun/bel bölgesindeki dar giysileri gevşetin.
-Baş ve çene manevrasıyla hava yolunu açın.
-Kişi tam olarak kendine gelene kadar ağzından su veya yiyecek vermeyin.
-1 dakika içinde uyanmazsa, havale veya göğüs ağrısı eşlik ediyorsa derhal 112 arayın.
+[İLKYARDIMIN ABC'Sİ]
+A — Airway / Hava yolu açıklığının değerlendirilmesi
+B — Breathing / Solunumun değerlendirilmesi (Bak-Dinle-Hisset, 10 saniye)
+C — Circulation / Dolaşımın değerlendirilmesi (şah damarından 5-10 saniye nabız)
 
-MİDE BULANTISI VE KUSMA
+[HAYAT KURTARMA ZİNCİRİ — AHA 2025 Güncel Tek Zincir (Yetişkin + Çocuk)]
+Halka 1: Kardiyak arrestin önlenmesi ve hazırlık
+Halka 2: Erken tanı ve 112/acil servisi aktive etme
+Halka 3: Olay yerinde Temel Yaşam Desteği (yüksek kaliteli KPR)
+Halka 4: İleri yaşam desteği (AED + ambulans ekibi müdahalesi)
+Halka 5: Kardiyak arrest sonrası bakım
+NOT: 2025 AHA kılavuzu yetişkin ve pediatrik zinciri tek çatı altında birleştirdi; yenidoğanlara ayrı "Newborn Chain of Care" uygulanır.
 
-Mide bulantısı ve kusma müdahalesi:
-Hafif durumlarda dinlenme ve yudum yudum su içerek sıvı alımı sağlanmalıdır.
-Mideyi yormayacak kraker, muz veya haşlanmış patates gibi hafif gıdalar tüketilebilir.
-Zararlı maddeler yemekten kaynaklanıyorsa kusturmaya çalışmayın.
-Israrcı kusma, şiddetli karın ağrısı veya dehidrasyon belirtileri varsa tıbbi yardım gerekir.
-Çocuklarda ve yaşlılarda sıvı kaybı hızla kritik hale gelebilir, gözetim altında tutun.
+[NORMAL YAŞAM DEĞERLERİ]
+Yetişkin solunum: 12–20/dk
+Çocuk solunum: 16–22/dk
+Bebek solunum: 18–24/dk
+Yetişkin nabız: 60–100/dk
+Çocuk nabız: 100–120/dk
+Bebek nabız: 100–140/dk
+Normal vücut ısısı: 36,5°C
+Normal kan basıncı: 100/60 – 140/90 mmHg
 
-ZEHİRLENME VE MADDE ALIMI
+[112'Yİ ARAMA REHBERİ]
+- Sakin olun ya da sakin birisine aratın.
+- Kesin adres, yakın cadde/bina adı, il/ilçe bilgisi verin.
+- Kimliğinizi ve geri arama numarasını bildirin.
+- Hasta sayısı, yaşı, olayın tanımını aktarın.
+- Uygulanan ilkyardımı belirtin.
+- Operatör "tamam" deyene kadar telefonu kapatmayın.
 
-Zehirlenme şüphesinde yapılacaklar:
-Kimyasal madde veya ilaç alımı şüphesi varsa zaman kaybetmeden 112 veya 114 (Zehir Danışma) arayın.
-Yanınızdaki maddelerin (ilaç kutusu, temizlik malzemesi vb.) bilgisini sağlık ekipleriyle paylaşın.
-Sağlık ekibi aksini söylemediği sürece kişiyi KESİNLİKLE kusturmaya çalışmayın.
-Yakıcı maddeler çıkarken yemek borusuna tekrar zarar verir.
-Kişiyi güvenli bir yere alın ve sakin tutun, yalnız bırakmayın.
-Bilinç kaybı ya da nefes durması varsa CPR başlatın.
+[TÜRKİYE ACİL NUMARALARI]
+112 — Acil Yardım (Ambulans, İtfaiye, Polis)
+110 — İtfaiye (ayrıca aranabilir)
+114 — Ulusal Zehir Danışma Merkezi
 
-ANAFİLAKSİ VE ANAFILAKTIK ŞOK
+========================================
+BÖLÜM 2: TEMEL YAŞAM DESTEĞİ (KPR / CPR)
+========================================
 
-Ağır alerjik reaksiyon hayatı tehdit eder, derhal hareket edin:
-Nefes darlığı, dudaklarda, dilde veya boğazda şişme oluşuyorsa bu acil ve hayati bir durumdur.
-HEMEN 112 arayın.
-Kişinin yanında varsa acil adrenalin oto-injektörünü (EpiPen) hemen uygulayın.
-Kişiyi sırtüstü yatırıp ayaklarını kaldırın; ancak nefes almakta zorlanıyorsa dik oturmasına izin verin.
-Tetikleyici maddeyi (yiyecek, böcek iğnesi) uzaklaştırın.
-Nefes durmasında CPR başlatın.
+[TANIM]
+Temel Yaşam Desteği (TYD/CPR): Hava yolu açıklığı sağlandıktan sonra, solunumu ve/veya kalbi durmuş kişiye yapay solunum ile akciğerlere oksijen gitmesini ve dış kalp masajı ile kalpten kan pompalanmasını sağlamak üzere yapılan ilaçsız müdahalelerdir.
 
-KALP KRİZİ BELİRTİLERİ VE ACİL MÜDAHALESİ
+[KARDİYAK ARREST BELİRTİLERİ]
+- Bilincin kapalı olması
+- Normal solunumun olmaması (gasping/atonal nefes arrest kabul edilir)
+- Uyaranlara yanıt vermeme
+- Hareketsizlik
 
-Kalp krizi hayatı tehdit eden en kritik acil durumlardan biridir:
-Belirtiler: Göğüs ortasında ezici, baskılı ağrı; sol kol, çene, sırta yayılan ağrı; terleme, bulantı, nefes darlığı.
-HEMEN 112 arayın, bu adım en kritik adımdır.
-Kişiyi rahat bir pozisyona getirin, yarı oturur hale getirin.
-Sakinleştirin ve hareket ettirmeyin.
-Alerjisi yoksa ve doktoru daha önce önermişse bir adet aspirin çiğnetilmesi faydalı olabilir.
-Kişi bilincini kaybederse CPR başlatın.
+[YETİŞKİN CPR — ADIM ADIM]
+1. Ortam güvenliğini kontrol et.
+2. Omuzlarına vur, "İyi misiniz?" diye bağır — yanıt yoksa yardım çağır.
+3. 112'yi ara veya birinden arattır; AED getirt.
+4. Kişiyi sert zemin üzerine sırt üstü yatır.
+5. Giysileri göğüs ve boynu açacak şekilde kaldır.
+6. Ağız içini kontrol et; görünen yabancı cisim varsa uzaklaştır.
+7. Baş geri–çene yukarı (head tilt–chin lift) pozisyonu ver.
+8. Bak-Dinle-Hisset: 10 saniye solunum değerlendir.
+9. Solunum yoksa: bir elin topuğunu göğüs kemiğinin (sternum) alt yarısının ortasına koy; diğer eli üstüne kenetle.
+10. Dirsekleri bükmeden, vücuda dik, 5–6 cm derinliğe bastır.
+11. Hız: 100–120 kompresyon/dakika; her baskı sonrası göğsün tam geri dönmesine izin ver.
+12. 30 kompresyon tamamla → burnu kapat → ağızdan 2 kurtarma soluk ver (her biri ~1 sn); göğsün yükselip yükselmediğini gözle.
+13. 30:2 döngüsünü ambulans gelene veya kişi canlanana kadar sürdür.
+14. Eğitim almamış kurtarıcı için Hands-Only CPR (yalnızca kompresyon) kabul edilebilir.
+Kaynak: AHA 2025 Guidelines
 
-HİPERTANSİYON KRİZİ VE YÜKSEK TANSIYON
+[ÇOCUK CPR — 1 YAŞ - ERGENLİK BAŞLANGICI]
+- Ergenlikteki çocuklara (kız: meme tomurcuğu, erkek: koltuk altı kılı görülen) yetişkin protokolü uygulanır.
+- Kompresyon derinliği: 5 cm (göğüs yüksekliğinin 1/3'ü).
+- Küçük çocuklarda tek el topuğu, büyük çocuklarda iki el.
+- Oran: 30:2 tek kurtarıcı; iki eğitimli kurtarıcı mevcutsa 15:2.
+- Yalnız kurtarıcı: 5 tur 30:2 tamamladıktan sonra 112'yi kendisi arar (çocuklarda arrest genellikle solunumsal kaynaklıdır — önceden solunum sağlanmalı).
+- AED: çocuğa uygun pedler/ayar mevcut ise kullan; yoksa yetişkin pedleri kabul edilebilir.
+Kaynak: AHA/AAP 2025 Pediatric BLS Guidelines
 
-Ani yüksek tansiyon krizi tehlikelidir:
-Ani ve çok yüksek tansiyon, şiddetli baş ağrısı, göğüs ağrısı veya görme bozukluğu ile birlikte ise mutlaka tıbbi değerlendirme gerektirir.
-Kişiyi sakinleştirin, yarı oturur pozisyonda dinlendirin.
-Doktor kontrolü olmadan dilaltı veya ekstra tansiyon ilacı vererek tansiyonu aniden düşürmeye çalışmayın.
-Ani tansiyon düşüşü felç riskini artırabilir.
-Semptomlar şiddetliyse 112 arayın.
+[BEBEK CPR — 0–12 AY]
+- Bilinç kontrolü: Ayak tabanına hafifçe vur, sese yanıt kontrol et.
+- Baş geri–çene yukarı pozisyonu çok hafif verilir; aşırı germe hava yolunu kapatır.
+- Kurtarma solukları: Ağzı bebek ağzı VE burnunu birlikte kapayacak şekilde yerleştir.
+- Kompresyon tekniği: İki kurtarıcı varsa iki başparmak–el sarma (two-thumb encircling) tercih edilir; tek kurtarıcı iki parmak (orta + yüzük) kullanır. NOT: 2025 kılavuzunda iki parmak tekniği artık eskimiş olarak nitelendirildi; iki başparmak yöntemi öncelikli.
+- Derinlik: ~4 cm (göğüs yüksekliğinin 1/3'ü).
+- Hız: 100–120/dk; Oran: 30:2 (tek kurtarıcı), 15:2 (iki eğitimli kurtarıcı).
+- 5 tur tamamlandıktan sonra yalnız kurtarıcı 112'yi arar.
+Kaynak: AHA 2025
 
-HİPOGLİSEMİ VE DÜŞÜK KAN ŞEKERİ
+[AED KULLANIMI]
+- AED mevcut ise CPR'a ara vermeden hemen bağla.
+- Cihazın sesli ve görsel talimatlarını harfiyen izle.
+- Enerji yüklenirken kimse hastaya dokunmamalı.
+- Şok sonrası derhal CPR'a devam et; AED her 2 dakikada bir yeniden değerlendirir.
+- Çocuklarda pediatrik ayar/pedler kullan; yoksa yetişkin ekipmanı kabul edilebilir.
 
-Şeker düşmesi acil müdahale gerektirir:
-Bilinçli kişiye kana hızlı karışacak şekerli bir içecek (meyve suyu, şekerli su) veya glukoz tabletleri verin.
-15 dakika bekleyip durumu kontrol edin, düzelme olmazsa tekrarlayın.
-Eğer kişinin bilinci kapalıysa KESİNLİKLE ağzına bir şey koymayın; boğulmasına sebep olabilir.
-Bilinçsiz diyabet hastasında derhal 112 arayın.
-Titremeye ek olarak terleme, solukluk, konfüzyon hipoglisemi belirtileri arasındadır.
+========================================
+BÖLÜM 3: HAVA YOLU TIKANIKLIĞI (YABANCI CİSİM)
+========================================
 
-ASTIM KRİZİ VE NEFES DARLIĞI
+[KISMİ TIKANMA]
+Belirtiler: Öksürür, nefes alabilir, konuşabilir.
+Müdahale: Müdahale etme — öksürmeye teşvik et; durum kötüleşirse Heimlich'e geç.
 
-Astım atağında doğru pozisyon ve ilaç kritiktir:
-Kişiyi rahatlatın ve dik oturtun; yatırmak nefes almayı zorlaştırır.
-Varsa kendi astım inhaler (fısfıs) ilacını kullanmasına yardım edin.
-Ilık su içirmek kasılmayı hafifletebilir, soğuk su içirmeyin.
-İlaç kullanmasına rağmen 5-10 dakika içinde düzelme olmazsa 112 arayın.
-Dudaklarda morarma varsa veya konuşmakta zorlanıyorsa derhal 112 arayın.
+[TAM TIKANMA — YETİŞKİN/ÇOCUK]
+Belirtiler: Nefes alamaz, konuşamaz; ellerini boğazına götürür; siyanoz (morarma).
 
-SARA NÖBET VE EPİLEPSİ KRİZİ
+Bilinçli yetişkin/çocuk Heimlich manevrası:
+1. Hastanın arkasına geç; beline sar.
+2. Bir elini yumruk yap; başparmağı içe dönük göbek ile göğüs kemiği arasına (mideplex üstü) koy.
+3. Diğer elle yumruğu kavra.
+4. İÇERİ ve YUKARI doğru hızlı, güçlü bastır.
+5. Yabancı cisim çıkana kadar tekrarla.
+6. Tıkanıklık açılmıyorsa 5 sırta vurma + 5 Heimlich döngüsü uygula.
 
-Epilepsi nöbetinde yapılması ve yapılmaması gerekenler:
-Kişiyi tutmaya, hareketlerini engellemeye ÇALIŞMAYIN.
-Çarparak yaralanmasını önlemek için etrafındaki sert eşyaları uzaklaştırın.
-Başının altına yumuşak bir şey (ceket, yastık) koyun.
-Ağzına kesinlikle bir şey (kaşık, parmak) SOKMAYIN; dil yutma efsanedir ve müdahale tehlikelidir.
-Nöbet bittikten sonra kişiyi yavaşça yan yatırın (koma pozisyonu), solunum yolunu açık tutun.
-Nöbet 5 dakikadan uzun sürerse veya arka arkaya nöbet geliyorsa 112 arayın.
+Sırta vurma tekniği: Bir elle göğsü destekleyerek öne eğ → diğer elin topuğuyla kürek kemikleri arasına 5 kez güçlüce vur.
 
-BURUN KANAMASI
+2025 AHA/AAP Güncellemesi — Çocuklarda: 5 sırta vurma + 5 karın itiği döngüsü önerilmektedir (sadece karın itiği değil). Bu değişiklik eski kılavuzdan farklıdır.
 
-Burun kanamasını doğru durdurmak:
-Kişiyi dik oturtun ve başını hafifçe ÖNE doğru eğin; arkaya eğmek kanın mideye gidip kusmaya yol açar.
-Burnun yumuşak kısmını (kemik altı) başparmak ve işaret parmağıyla 10-15 dakika boyunca kesintisiz sıkın.
-Bu süre içinde bırakmayın ve kontrol etmek için parmağınızı kaldırmayın.
-Soğuk bez veya buz paketi alnına ya da enseye uygulanabilir.
-Kanama 20 dakikadan uzun sürerse veya kafa travması varsa tıbbi yardım alın.
+Bilinci kapalı yetişkin/çocuk FBAO:
+1. Kişiyi yere yatır; 112'yi ara.
+2. CPR başlat — her kompresyon serisinden önce ağzı kontrol et; cisim görünürse çıkar.
+3. Kör parmak süpürmesi YAPMA — cisim görünmeden parmağı sokmak derine itebilir.
 
-ELEKTRİK ÇARPMASI VE CEREYANa KAPILMA
+[TAM TIKANMA — BEBEK (0–12 AY)]
+2025 AHA/AAP Güncellemesi: Bebekte karın itiği ÖNERİLMEZ; yalnızca sırt vuruşu + göğüs itiği döngüsü.
+1. Bebeği ön kolun üzerine yüzüstü, başı aşağıda tut.
+2. El bileğinin iç kısmıyla kürek kemikleri arasına 5 kez vur.
+3. Bebeği diğer kolun üstüne sırtüstü çevir; 2 parmakla sternum alt kısmına 5 göğüs itiği yap.
+4. Cisim görünürse çıkar; görünmüyorsa döngüyü tekrarla.
+5. Bilinç kapanırsa CPR başlat; 112'yi ara.
 
-Elektrik kazasında önce güvenliği sağlayın:
-Elektriği şalterden kesin veya kuru tahta/plastik gibi yalıtkan bir cisimle kişiyi elektrik kaynağından uzaklaştırın.
-Elektrik akımı kesilmeden kişiye KESİNLİKLE çıplak elle dokunmayın.
-Akım kesildikten sonra kişinin bilincini ve solunumunu kontrol edin.
-Gerekirse CPR başlatın ve derhal 112 arayın.
-Elektrik yanıkları dışarıdan küçük görünse de iç organlarda ciddi hasar bırakır; mutlaka hastaneye gidin.
+========================================
+BÖLÜM 4: KALP KRİZİ (MİYOKART ENFARKTÜSÜ)
+========================================
+
+[BELİRTİLER]
+- Göğüs ortasında ezici, sıkıştırıcı, baskı hissettiren ağrı (>20 dakika)
+- Ağrının sol kola, boyuna, çeneye, sırta, omuzlara yayılması
+- Yoğun terleme, bulantı, kusma
+- Nefes darlığı ve ölüm korkusu
+- Bazı hastalarda (özellikle kadın, diyabetik): atipik sunum — hazımsızlık, yorgunluk, sırt ağrısı; aksi ispatlanana kadar kalp krizi kabul et.
+
+[ANGİNA PEKTORİS FARKI]
+Anjina: Efor/heyecanla tetiklenir; istirahatte geçer; 5–10 dakika sürer; nitrogliserin ile geçer.
+Kalp krizi: Daha şiddetli, 20 dakika+ sürer; istirahatte geçmez; nitrogliserin ile tam geçmez.
+
+[İLKYARDIM]
+1. HEMEN 112'yi ara — en kritik adım.
+2. Kişiyi derhal dinlendir; sakinleştir; hareket ettirme.
+3. Yarı oturur (45°) pozisyon ver.
+4. Varsa kendi doktoru tarafından önerilmiş ilaçları (nitrogliserin) almasına yardım et.
+5. Aspirin (162–325 mg çiğnemeli): Alerjisi yok, kanama riski yok, doktor daha önce önermişse verilebilir. AHA 2024 First Aid Guidelines aspirin verilmesini düşük komplikasyon riskiyle destekler.
+6. Yaşam bulgularını (nabız, solunum, bilinç) sürekli izle.
+7. Bilinç kapanırsa → CPR başlat.
+
+========================================
+BÖLÜM 5: FELÇ / İNME
+========================================
+
+[BE-FAST TESTİ — 2025 Güncel]
+B (Balance / Denge): Ani denge kaybı veya koordinasyon bozukluğu var mı?
+E (Eyes / Gözler): Ani görme kaybı veya bulanıklık (bir ya da iki gözde) var mı?
+F (Face / Yüz): Gülümsemesini iste — yüzde düşme var mı?
+A (Arms / Kollar): İki kolunu kaldırmasını iste — biri düşüyor mu?
+S (Speech / Konuşma): Konuşması bozuk veya anlaşılmaz mı?
+T (Time / Zaman): Herhangi bir belirti varsa → HEMEN 112'yi ara.
+NOT: BE-FAST, klasik FAST'a göre posterior (arka) inmeleri yakalamada daha üstün bulunmuştur; kaçırılan vakaları %14'ten %4'e düşürür.
+
+[UYARI: TİA (Geçici İskemik Atak)]
+TIA belirtileri FAST/BE-FAST ile aynıdır ama kısa sürede (dakika-saat içinde) geçer. TIA'dan sonraki 48 saat içinde inme riski %50'dir → HER TIA, gerçek inme gibi acilen değerlendirilmeli.
+
+[İLKYARDIM]
+1. 112'yi hemen ara; semptom başlangıç saatini not et (tedavi için kritik: tPA 4,5 saat; mekanik trombektomi 24 saate kadar uygulanabilir).
+2. Kişiyi hareket ettirme.
+3. Yiyecek, içecek, ilaç verme.
+4. Bilinci yerinde ama tam uyanık değilse koma (yan) pozisyonu ver.
+5. Soğuk veya aşırı sıcaktan koru.
+6. Ambulans gelene kadar yanında kal; durumu izle.
+
+========================================
+BÖLÜM 6: ANAFİLAKSİ (AĞIR ALERJİK REAKSİYON)
+========================================
+
+[TANI KRİTERLERİ — WAO 2020 / AAAAI-ACAAI 2023]
+Aşağıdakilerden birinin varlığı anafilaksiyi düşündürür:
+1. Alerjene maruziyet sonrası ani gelişen deri+solunum veya kardiyovasküler belirti.
+2. Bilinen alerjenle temastan dakikalar-saatler içinde gelişen iki veya daha fazla organ tutulumu (deri, solunum, dolaşım, GİS).
+3. Bilinen alerjenle temas sonrası tek başına ciddi hipotansiyon.
+
+[BELİRTİLER]
+- Deri: Yaygın kurdeşen, kızarıklık, kaşıntı, anjioödem
+- Solunum: Nefes darlığı, stridor, bronkospazm, öksürük
+- Dolaşım: Hızlı/zayıf nabız, hipotansiyon, baş dönmesi, senkop
+- GİS: Bulantı, kusma, karın ağrısı
+- SSS: Bilinç değişikliği, ajitasyon
+
+[İLKYARDIM]
+1. HEMEN 112'yi ara.
+2. Tetikleyiciyi uzaklaştır (yiyecek, böcek iğnesi vb.).
+3. EpiPen (adrenalin oto-enjektör) mevcut ise uyluğun dış yüzüne (giysi üzerinden de olur) hemen uygula; yardıma ihtiyaç varsa ilkyardımcı uygulama yapabilir (AHA 2024 First Aid Guidelines).
+4. Kişiyi sırtüstü yatır, bacakları kaldır (şok pozisyonu).
+5. Nefes almakta zorlanıyorsa oturmasına izin ver.
+6. İkinci doz: Epinefrin uygulandıktan sonra 5–15 dakika içinde yanıt alınamazsa veya semptomlar geri dönerse → ikinci doz uygulanabilir.
+7. EMS aktive edilmesi zorunludur; ancak AAAAI/ACAAI 2023 kılavuzuna göre epinefrin sonrası hızlı tam yanıt alınmış ve ek EAI mevcutsa EMS zorunluluğu tartışmalıdır — Türkiye'de standart olarak 112 çağrılmalıdır.
+8. Nefes durmasında CPR başlat.
+Kaynak: WAO 2020, AAAAI/ACAAI 2023
+
+========================================
+BÖLÜM 7: OPİOİD AŞIRI DOZU — NALOKSON
+========================================
+
+[BELİRTİLER]
+- Bilinç kaybı veya yanıtsızlık
+- Yavaş/yüzeysel solunum ya da solunumun durması
+- Soluk, morarmış dudaklar/tırnaklar
+- Gurultu/horlama benzeri nefes
+
+[İLKYARDIM — AHA/Red Cross 2024 Guidelines]
+1. Yanıtsız, normal nefes almayan kişi: 112'yi hemen ara.
+2. Yüksek kaliteli CPR başlat (kompresyon + ventilasyon — opioid arresti hipoksi kaynaklıdır, yalnızca kompresyon yetersiz kalır).
+3. Nalokson (Narcan) mevcut ise derhal uygula:
+   - Nazal sprey: 2 mg burun içine, 2–3 dk içinde yanıt yoksa tekrarla.
+   - Enjeksiyon: 0,4 mg uyluk kasına IM; 4 dakikada bir tekrar edilebilir.
+4. Kişi yanıt verirse yan pozisyona al; sürekli izle — naloksonun etkisi opioidlerin etkisinden kısa olabilir (30–90 dk).
+5. Tüm nalokson sonrası iyileşen hastalar hastaneye sevk edilmeli.
+NOT: Naloksonun buprenorfin/metadon gibi uzun etkili opioidlerde çoklu doz gerektirebileceği unutulmamalı.
+Kaynak: AHA/Red Cross First Aid Guidelines 2024, SAMHSA Toolkit
+
+========================================
+BÖLÜM 8: KANAMA VE YARA YÖNETİMİ
+========================================
+
+[KANAMA TÜRLERİ]
+Atardamar (arteriyel) kanaması: Nabza uyumlu fışkırır; açık/parlak kırmızı; hızla hayati tehlike.
+Toplardamar (venöz) kanaması: Koyu renkli; sürekli akar; genellikle kontrol edilebilir.
+Kılcal (kapiller) kanama: Küçük kabarcıklar; az miktarda; kendiliğinden durabilir.
+İç kanama: Dışarıdan görülmez; şok belirtileriyle anlaşılır.
+
+[DIŞ KANAMA — STOP THE BLEED Protokolü (ACS/AHA)]
+Adım 1 — Baskı (Direct Pressure): Temiz bez/gazlı bezle yara üzerine sıkıca ve sürekli bastır; en az 5 dakika kaldırmadan tut.
+Adım 2 — Dolgu (Wound Packing): Derin yaralarda gazlı bezi ya da temiz kumaşı yaranın içine doldur ve üzerine baskı uygula; 3 dakika sürekli baskı sonrası değerlendir.
+Adım 3 — Turnike: Uzuv yaralanmalarında baskı yetmiyorsa uygula (ayrıntı aşağıda).
+
+[KANAMADA GENEL İLKYARDIM ADIMLARI]
+1. Kişiyi sırtüstü yatır; ABC değerlendir; 112'yi ara.
+2. Yara üzerine temiz bezle bastır; bez kanla ıslanırsa üstüne yeni bez ekle — ilkini kaldırma.
+3. Kanayan bölgeyi kalp seviyesinin üstüne kaldır.
+4. Şok pozisyonu: bacakları 30 cm kaldır.
+5. Yaşam bulgularını her 2–3 dakikada bir değerlendir.
+
+[TURNİKE UYGULAMASI]
+Endikasyon: Uzuv kanaması — baskı/dolgu yetmiyorsa; uzuv koptuysa; çok sayıda yaralı varsa.
+- Ticari turnike (CAT, SOFTT-W) tercih edilir; minimum 7–8 cm genişliğinde olmalı.
+- Yara bölgesinin 5–7 cm proksimaline (üst tarafına) uygula; diz/dirsek ekleminin üzerine getirme.
+- Kanama durana veya distal nabız kesilinceye kadar sıkıştır.
+- Uygulama saatini yazan bir yere not et.
+- Turnike, hastane ekibine teslim edilene kadar asla çıkarma.
+- Teller, ipler, ince şeritler kullanma — doku hasarı yapar.
+Kaynak: Stop the Bleed / ACS, AHA 2024 First Aid Guidelines
+
+[İÇ KANAMA]
+Şiddetli travma/darbe/kırık sonrası şüphelen.
+Belirtiler: Soğuk-soluk-nemli cilt, hızlı/zayıf nabız, düşen tansiyon, bilinç değişikliği.
+Müdahale: ABC değerlendir; 112'yi ara; şok pozisyonu ver; hareket ettirme; yiyecek-içecek verme.
+
+[KESİK VE YARA]
+1. Kesiği bol temiz su ile 1–2 dakika yıka; mümkünse steril serum fizyolojik kullan.
+2. Temiz bezle 5–10 dakika sıkıca bastır.
+3. Kanama durduğunda antiseptik (klorheksidin veya %10 povidon-iyot) uygula.
+4. Yara nemli kalmalı; steril yapışkan bantla kapat.
+5. Yabancı cisim mevcutsa (cam, metal) çıkarma; çevresini destekle.
+6. Derin, geniş, kanama durmuyor veya kontamine ise acil servise git.
+
+[SIYRIKLARDA İLKYARDIM]
+1. Ellerini sabun-suyla yıka.
+2. Sıyrığı soğuk-ılık su ve yumuşak sabunla nazikçe temizle.
+3. Görünür pislik parçacıklarını sterilize edilmiş cımbızla çıkar.
+4. Antibiyotikli merhem veya steril nem bariyeri merhemi sür.
+5. Bandaj veya gazlı bezle örtü; günde bir kez pansuman yenile.
+6. Kızarıklık, şişlik, ısı, akıntı gelişirse enfeksiyon — doktora git.
+
+[BURUN KANAMASI]
+1. Dik otur; başı hafifçe ÖNE eğ (arkaya eğme — kan yutmaya yol açar).
+2. Burnun YUMUŞAK kısmını (kıkırdak-kemik hizası altı) başparmak-işaret parmağıyla 10–15 dakika KESİNTİSİZ sık.
+3. Bu süre içinde parmağı kaldırma.
+4. Soğuk bez/buz paketi alnına veya enseye uygulanabilir.
+5. 20 dakika sonra kanama durmazsa, kafa travması varsa veya antikoagülan kullanıyorsa → acil servis.
+
+[REKTAL KANAMA]
+Hafif rektal kanama: Genellikle hemoroid/anal fissür; mutlaka doktor değerlendirmesi gerekir.
+Siyah/katran kıvamında dışkı: Üst GİS kanaması — HEMEN acile git.
+Ateş, karın ağrısı, ani kanlı dışkılamayla birlikte: Acil değerlendirme gerektirir.
+
+========================================
+BÖLÜM 9: ŞOK
+========================================
+
+[TANIM]
+Şok: Kalp-damar sisteminin yaşamsal organlara yeterli kanlanma sağlayamaması sonucu ortaya çıkan akut dolaşım yetmezliğidir.
+
+[TÜRLER]
+Hipovolemik şok: Kanama veya sıvı kaybı
+Kardiyojenik şok: Kalp yetersizliği / kalp krizi
+Anafilaktik şok: Ağır alerjik reaksiyon
+Septik/toksik şok: Enfeksiyon / zehirlenme
+Nörojenik şok: Omurilik hasarı
+
+[BELİRTİLER]
+- Hızlı ve zayıf nabız
+- Düşen kan basıncı
+- Hızlı ve yüzeysel solunum
+- Cilt: soğuk, soluk, nemli
+- Bilinç değişikliği: kaygı, huzursuzluk, uyuşukluk
+- Susama hissi
+- Dudak çevresinde solukluk veya morarma
+
+[İLKYARDIM]
+1. Sırtüstü yatır.
+2. Hava yolunu aç.
+3. Kanaması varsa durdur.
+4. Şok pozisyonu: bacakları 30 cm kaldır (kafa/göğüs yaralanması yoksa).
+5. Sıcak tut; üstünü ört.
+6. Hareket ettirme; yiyecek-içecek verme.
+7. Hızla 112'ye ilet.
+
+========================================
+BÖLÜM 10: YANIKLAR
+========================================
+
+[DERECELER]
+1. derece (Yüzeysel): Kızarıklık, ağrı, ödem; deri bütün; 48–72 saatte iyileşir.
+2. derece (Parsiyel kalınlık): İçi su dolu kabarcıklar (bül); çok ağrılı; haftalar içinde iyileşir.
+3. derece (Tam kalınlık): Deri tüm katları hasarlı; ağrısız (sinir hasarı); beyaz/deri renginde/yanmış görünüm.
+4. derece: Kemik/tendon/kas etkilenmiş — özel yanık merkezi gerektirir.
+
+[ISI YANIĞI İLKYARDIM]
+1. Kişi yanıyorsa KOŞMASINI ENGELLE; battaniyeyle sar ve yuvarla.
+2. ABC değerlendir; solunum yolu etkilendiyse 112'yi hemen ara.
+3. Etkilenen bölgeyi 20 dakika soğuk AKAN su altında tut (5–15°C arası; buzlu su KULLANMA — doku hasarı yapar).
+4. Ödem öncesi yüzük, bilezik, saat çıkar.
+5. Kabarcıkları PATLATMA.
+6. Temiz, tüy bırakmayan nemli bezle gevşekçe ört.
+7. KESİNLİKLE sürme: yoğurt, diş macunu, yağ, margarin, buz, un — ısıyı hapseder, enfeksiyon riskini artırır.
+8. Geniş alan yanıkları (yetişkinde >%10 vücut yüzeyi), yüz/el/ayak/genital/perineal yanıklar, 3. derece yanıklar, inhalasyon hasarı → HEMEN 112.
+
+[KİMYASAL YANIK]
+1. Önce kendi korumanı sağla (eldiven, maske).
+2. Katı kimyasalı KURUya fırçala/sil — önce su değdirme.
+3. Ardından 20–30 dakika bol soğuk akan suyla yıka.
+4. Kontamine giysiye ve takılara dikkatli müdahale et.
+5. Göze kimyasal kaçtıysa: 15–20 dakika sürekli suyla duru; göz doktoruna git.
+6. 112 veya acil servise başvur; maddenin adını, maruz kalma süresini bildir.
+
+[ELEKTRİK YANIĞI]
+1. ELEKTRİĞİ ÖNCE KES — sigortayı/şalteri kullan.
+2. Kesmek mümkün değilse: KURU tahta/plastik/naylon iple kişiyi kaynaktan uzaklaştır.
+3. Çıplak elle KESİNLİKLE dokunma.
+4. Akım kesildikten sonra ABC değerlendir; gerekirse CPR başlat.
+5. 112'yi ara — elektrik yanıkları dıştan küçük görünse de iç organlarda ağır hasar bırakır; mutlaka hastaneye.
+6. Hasar gören bölgeyi temiz bezle ört; suyla müdahale etme.
+
+[GÜNEŞ YANIĞI]
+1. Serin (soğuk değil) suyla ya da nemli bezle bölgeyi yıka.
+2. Aloe vera jel veya nemlendirici losyon uygula; buz, yağ veya krem sürme.
+3. Bol sıvı iç.
+4. Ağrı için parasetamol veya ibuprofen.
+5. Geniş alan, su kabarcıkları veya ateş varsa → tıbbi yardım.
+
+========================================
+BÖLÜM 11: KAFA VE OMURİLİK TRAVMASI
+========================================
+
+[TEMEL KURAL]
+Yüz kırığı, tüm düşme vakaları, trafik kazaları, bilinci kapalı tüm travmalar = kafa/omurilik yaralanması kabul et, aksini ispatlayana kadar.
+
+[BELİRTİLER]
+- Bilinç düzeyi değişikliği, hafıza kaybı
+- Baş, boyun, sırtta ağrı
+- El/parmaklarda uyuşma veya his kaybı
+- Vücudun herhangi bir bölgesinde hareket kaybı
+- Burun veya kulaktan kan ya da berrak sıvı gelmesi
+- Göz çevresinde veya kulak arkasında morluk (geç belirti)
+
+[İLKYARDIM]
+1. Kişiyi hareket ettirme; boynu sabit tut; baş-boyun-gövde eksenini koru.
+2. HEMEN 112'yi ara.
+3. Bilinç, göz bebekleri (eşit büyüklük mü?) ve solunumu izle.
+4. Nefes durmasında: boynu sabit tutarak çok dikkatli baş geri–çene yukarı ver; CPR başlat.
+5. Taşıma zorunluysa RENTEK manevrası veya köprü tekniğiyle sedyeye al; sarsıntısız taşı.
+
+[RENTEK MANEVRASI (Araç içinden çıkarma acil durumu)]
+Endikasyon: Yangın, patlama gibi anında ölüm riski varken araç içindeki yaralıyı çıkarmak için.
+Teknik: Bir elle kol, diğer elle çene kavranarak boyun tespit edilir; baş-boyun-gövde hizasını bozmadan araçtan yavaşça çekilir.
+
+========================================
+BÖLÜM 12: KIRIK, ÇIKIK, BURKULMA
+========================================
+
+[KIRIK ÇEŞİTLERİ]
+Kapalı kırık: Kemik kırık, deri sağlam.
+Açık kırık: Deri yırtık, kırık ucu görünebilir; kanama + enfeksiyon riski yüksek.
+Sıkışma kırığı: Kompresyon yükü altında; vertebra yaralanmalarında sık.
+
+[KIRIK BELİRTİLERİ]
+Hareketle artan ağrı, şekil bozukluğu, hareket kaybı, ödem, morarma.
+
+[KIRIK İLKYARDIM]
+1. Hayatı tehdit eden yaralanmalar önce (kanama, solunum sorunları).
+2. Kanama varsa steril bezle baskı uygula.
+3. Kemiği yerine oturtmaya ya da düzeltmeye ÇALIŞMA.
+4. Açık kırıkta önce temiz bezle yarayı kapat, sonra tespit.
+5. Tespit: Kırık bölgeyi bir alt + bir üst eklemi içine alacak şekilde sabitle.
+6. Kol yaralanmasında yüzük ve saat hemen çıkar.
+7. Tespit sonrası nabız, deri rengi ve ısısını sık kontrol et.
+8. 112'yi ara.
+
+[BURKULMA — RICE Yöntemi (ilk 48 saat)]
+R — Rest: Ağırlık verme, dinlendir.
+I — Ice: 15–20 dk buz (havluya sarılı); 2–3 saatte bir tekrarla.
+C — Compression: Elastik bandajla sar.
+E — Elevation: Kalp seviyesinin üstünde tut.
+Ağrı için: ibuprofen veya naproksen sodyum. Kırık şüphesi varsa röntgen için acile git.
+
+[ÇIKIK]
+- Eklemi bulunduğu şekilde tespit et; ASLA yerine oturtmaya çalışma.
+- Kişiye ağızdan hiçbir şey verme.
+- Bölgede nabız, deri rengi ve ısısı kontrol et; 112'yi ara.
+
+========================================
+BÖLÜM 13: BİLİNÇ BOZUKLUĞU VE BAYILMA
+========================================
+
+[BAYILMA (SENKOP) NEDENLERİ]
+- Korku, heyecan, ağrı
+- Sıcak ortam, kapalı alan, yorgunluk
+- Aniden ayağa kalkma (ortostatik hipotansiyon)
+- Hipoglisemi (kan şekeri düşüklüğü)
+- Kardiyak aritmiler
+
+[BAYILMA BELİRTİLERİ]
+Baş dönmesi, solgunluk, terleme, hızlı-zayıf nabız, bacaklarda uyuşma, yere düşme.
+
+[BAYILMA İLKYARDIM]
+1. Sırtüstü yatır; bacakları 30 cm kaldır.
+2. Hava yolunu aç: baş geri–çene yukarı.
+3. Dar giysileri gevşet.
+4. Tamamen uyanana kadar yiyecek/içecek VERME.
+5. 1 dakika içinde uyanmazsa, havale/göğüs ağrısı eşlik ediyorsa → 112.
+
+[KOMA (YAN) POZİSYONU]
+Endikasyon: Bilinci kapalı ancak solunum ve nabzı olan hastalar.
+Teknik:
+1. Yakın taraf kolunu karşı omzunun üstüne koy.
+2. Karşı taraf bacağını dik açıyla kıvır.
+3. Omuz ve kalçasından tutarak tek hamlede çevir.
+4. Başı uzatılan kolun üstüne, hafif öne eğik konumlandır.
+5. Her 3–5 dakikada nabız ve solunum kontrol et.
+
+========================================
+BÖLÜM 14: EPİLEPSİ (SARA) NÖBETİ
+========================================
+
+[BELİRTİLER]
+- Ön belirti: Alışılmadık koku, ışık çakmaları, kasılmalar
+- Ani bilinç kaybı ve yığılma
+- Tonik-klonik kasılmalar; 10–20 sn nefes kesilmesi
+- Siyanoz, aşırı tükürük, sfinkter kaybı
+- Postnöbet dönemi: konfüzyon, uyuklama
+
+[YAPILACAKLAR]
+1. Çevredeki sert eşyaları uzaklaştır.
+2. Başın altına yumuşak bir şey (ceket, yastık) koy.
+3. Sıkan giysileri gevşet.
+4. Nöbet bittikten sonra koma pozisyonu ver.
+
+[YAPILMAYACAKLAR — KESİN]
+- Tutmaya veya hareketi engellemeye çalışma.
+- Ağzına kaşık, parmak, sopa SOKMA (dil yutma efsanedir; müdahale çeneyi kırar, parmağı ısırır).
+- Koklatma (lavanta, kolonya vb.) yapma.
+- Ağızdan yiyecek-içecek verme.
+- Çeneyi açmaya zorla.
+
+[112'Yİ ARAMA GEREKTİREN DURUMLAR]
+- Nöbet 5 dakikadan uzun sürüyorsa
+- Arka arkaya nöbet geliyorsa (status epilepticus şüphesi)
+- İlk kez nöbet geçiriyorsa
+- Nöbet sonrası bilinci 10 dakikadan uzun açılmıyorsa
+- Travma veya suda boğulma sonrası nöbet
+
+========================================
+BÖLÜM 15: HİPOGLİSEMİ (KAN ŞEKERİ DÜŞÜKLÜĞÜ)
+========================================
+
+[NEDENLERİ]
+İnsülin/oral antidiyabetik fazla dozu; uzun egzersiz; uzun süre aç kalma; alkol.
+
+[BELİRTİLER]
+Ani düşme: Korku, terleme, titreme, çarpıntı, ani acıkma.
+Yavaş düşme: Baş ağrısı, görme bozukluğu, konuşma güçlüğü, konfüzyon, bilinç kaybı.
+
+[İLKYARDIM]
+1. Bilinçli kişiye hızlı kana karışan şekerli içecek (meyve suyu, şekerli su, glikoz tableti) ver — 15–20 g basit karbonhidrat.
+2. 15–20 dakika bekle; ölçüm yaparsan kontrol et; düzelme olmadıysa tekrarla (15-15 kuralı).
+3. Bilinç kapalıysa ağzına KESİNLİKLE bir şey koyma — aspirasyon riski.
+4. Bilinçsiz diyabetik hastada derhal 112'yi ara.
+5. Yanında glukagon mevcutsa (Rx ile) uyluğa IM uygula ve 112'yi ara.
+
+========================================
+BÖLÜM 16: ASTIM KRİZİ
+========================================
+
+[BELİRTİLER]
+Hışıltılı solunum (wheezing), nefes darlığı, göğüs sıkışması, öksürük; ağır atakta: konuşamama, siyanoz.
+
+[İLKYARDIM]
+1. Kişiyi rahatlatarak DİK OTURt — yatırma, nefes almayı zorlaştırır.
+2. Varsa kendi kısa etkili bronkodilatör (salbutamol) inhalerini kullanmasına yardım et; spacer (aralık cihazı) yoksa bardak/plastik şişeden ev yapımı spacer yapılabilir (AHA 2024 First Aid Guidelines).
+3. Ilık su iç: soğuk su kasılmayı artırabilir.
+4. İlaç kullanmasına rağmen 5–10 dakikada düzelme yoksa → 112.
+5. Dudaklarda morarma veya tek kelime söyleyemiyorsa → HEMEN 112.
+
+========================================
+BÖLÜM 17: ZEHİRLENME
+========================================
+
+[ZEHİRLENME YOLLARI]
+Sindirim: Kimyasallar, mantar, bozuk besin, ilaç aşımı, alkol.
+Solunum: Karbon monoksit (CO), klor, solvent.
+Cilt: Zirai ilaçlar, bazı bitkiler.
+Isırma/sokma: Yılan, akrep, böcek.
+
+[GENEL BELİRTİLER]
+Bulantı, kusma, karın ağrısı, ishal, bilinç kaybı, nöbet, nefes darlığı, morarma, nabız bozukluğu.
+
+[GENEL İLKYARDIM]
+1. Bilinç kontrolü yap; 112 veya 114 (Ulusal Zehir Danışma Merkezi)'yi ara.
+2. Maddenin adını, etiketini veya kutu fotoğrafını sağlık ekibiyle paylaş.
+3. KUSturma: Sağlık ekibi söylemedikçe kusturma — yakıcı maddeler yemek borusuna ikinci kez zarar verir; aspirasyon riski.
+4. Kişiyi güvenli yere al; yalnız bırakma.
+5. Bilinç kaybında koma pozisyonu.
+6. Nefes durmasında CPR.
+
+[KARBON MONOKSİT (CO) ZEHİRLENMESİ]
+Belirtiler: Aşırı yorgunluk, baş ağrısı, bulantı, konfüzyon, bilinç kaybı; ciltte kiraz kırmızısı renk (geç ve kısa süreli belirti).
+Müdahale:
+1. Kişiyi ortamdan HEMEN çıkar; kendin de ortama girme — CO kokusuzdur.
+2. Temiz havaya al; ortamı havalandır.
+3. ABC değerlendir; 112'yi ara.
+4. Bilinç kapalıysa koma pozisyonu; nefes durmasında CPR.
+5. Tüm CO maruziyetleri hastanede karboksihemoglobin ölçümü gerektirir.
+
+Şofben/soba güvenliği: 6 m³'ten küçük veya iyi havalandırılmamış mekânda şofben/soba kullanımı kritik; banyo içerden kilitlenmemeli; karbon monoksit dedektörü önerilir.
+
+========================================
+BÖLÜM 18: SUDA BOĞULMA
+========================================
+
+[AHA/AAP 2024 Güncel Kılavuz — Kritik Farklar]
+
+- Boğulma resüsitasyonunda VENTİLASYON önceliklidir (diğer kardiyak arrest protokollerinden farklı olarak) — boğulma arrestleri hipoksi kaynaklıdır, kompresyon-önce (CAB) yaklaşımı yeterli değildir; Hava Yolu–Solunum–Kompresyon (ABC) yaklaşımı uygulanır.
+- Heimlich manevrası ARTIK ÖNERİLMEZ — vomiti ve aspirasyonu artırır; zaman kaybettirir.
+- Servikal omurga yaralanması: Boğulma vakalarında boyun hasarı son derece nadirdir (%0,009). Rutin servikal immobilizasyon artık önerilmiyor; suya atlama/dalış mekanizması veya travma belirtisi yoksa immobilizasyon airway yönetimini geciktirir.
+- Sudan çıktıktan sonra, eğer uygun eğitimli ise, su içindeyken kurtarıcı tarafından solunum desteği başlatılabilir (in-water rescue breathing).
+
+[İLKYARDIM ADIMLARI]
+1. KENDİ güvenliğini sağla; uzaktan kurtarma (uzanma → atma → tekne/bot); su içine eğitimsiz girme.
+2. Mümkünse araçla teslim al: Eriş–At–Çek (Reach, Throw, Row) yöntemi.
+3. Kişiyi sudan çıkar.
+4. Solunum ve nabzı 10 saniye kontrol et.
+5. Nefes almıyorsa veya nabız yoksa: Kurtarma nefeslerini ÖNCE ver (5 kurtarma soluk), ardından standart 30:2 CPR'a devam et.
+6. 112'yi ara; AED kullan (ancak boğulma arrestlerinde genellikle şok verilen ritim görülmez; ventilasyon daha önemli).
+7. Islak giysileri çıkar; sıcak tut; hipotermiye karşı önlem.
+8. Bilinç açık olsa bile mutlaka hastaneye — gecikmiş akciğer komplikasyonu (ikincil boğulma) gelişebilir.
+
+NOT: "İkincil boğulma", "kuru boğulma", "yakın boğulma" gibi terimler artık geçerliliğini yitirmiştir; tüm boğulma vakaları tıbbi değerlendirme gerektirir.
+
+Araçta boğulma — SWOC mnemoniği:
+S — Seatbelts off (Emniyet kemeri çöz)
+W — Window open (Camı aç)
+O — Out immediately (Hemen çık)
+C — Children first (Çocuklar önce)
+
+========================================
+BÖLÜM 19: HİPOTERMİ VE DONMA
+========================================
+
+[HİPOTERMİ DERECELERI (Çekirdek Ateş)]
+Hafif (32–35°C): Titreme, konfüzyon, kas hantallığı.
+Orta (28–32°C): Titreme durabilir, uyku hali, nabız yavaşlama.
+Ağır (<28°C): Bilinç kaybı, kardiyak aritmi riski; <30°C'de ACLS ilaçları verilmez.
+
+[DONMA DERECELERİ]
+1. derece: Soluk/kırmızı cilt, uyuşma, iğnelenme; geri dönüşümlü.
+2. derece: Ödem, kabarcıklar; sonradan siyah kabuğa dönebilir.
+3. derece: Geri dönüşümsüz doku hasarı; kesin sınırlı nekroz.
+
+[İLKYARDIM]
+1. Güvenli, sıcak ortama al.
+2. Islak kıyafetleri DIKKATLICE çıkar.
+3. Koltuk altı, kasık, boyun gibi büyük damar bölgelerine ILIK (sıcak değil, 38–42°C) kompres.
+4. Donuk bölgeyi OVMA; doğrudan sıcak su/ateş KULLANMA — ısı hasarı yapar.
+5. Kabarcıkları patlatma; temiz bezle ört.
+6. El/ayakları doğal pozisyonda tut; büzülmüşse açmaya çalışma.
+7. Sıcak içecek yalnızca TAM bilinçli kişiye ver; alkolden kaç.
+8. 112'yi ara; ciddi hipotermide ECMO dahil hastane tedavisi gerekebilir.
+
+Önemli: Ağır hipotermide uzun süreli CPR gerekebilir — "Hasta ısınana kadar ölü sayılmaz" prensibi uygulanır.
+
+========================================
+BÖLÜM 20: ISI ÇARPMASI VE GÜNEŞ ÇARPMASI
+========================================
+
+[AYIRT ETME]
+Isı bitkinliği: Solukluk, nemli cilt, terleme, zayıflık, adale krampları, baş dönmesi; çekirdek ateş <40°C.
+Isı çarpması (heat stroke): Sıcak-KURU cilt (terleme durabilir), yüksek ateş (>40°C), bilinç bulanıklığı, hızlı nabız → TIBBİ ACİL.
+
+[İLKYARDIM — Her ikisi için]
+1. Serin/gölge ortama al.
+2. Giysileri gevşet veya çıkar.
+3. Boyun, koltuk altı, kasıklara soğuk kompres.
+4. Bilinçliyse soğuk su iç.
+5. Sırtüstü yatır; bacakları kaldır.
+6. Isı çarpmasında (bilinç değişikliği) → HEMEN 112.
+
+Risk grupları: Kalp/tansiyon/diyabet/böbrek hastaları; 65+ yaş; 5 yaş altı çocuk; hamileler; yoğun egzersiz yapanlar.
+
+========================================
+BÖLÜM 21: YILAN, AKREP VE BÖCEK SOKMASI
+========================================
+
+[YILAN ISIRMASI]
+1. Kişiyi yatır; yaralı bölgeyi kalp seviyesinin altında tut.
+2. Zehrin yayılmaması için TAM hareketsiz tut.
+3. Takı ve ayakkabıları çıkar (şişlik beklenir).
+4. Yılanı yakalamaya/öldürmeye çalışma; mümkünse rengini-şeklini not et.
+5. YAPILMAYACAKLAR: Yara kesmek, emmek, turnike uygulamak — zararlıdır.
+6. HEMEN 112 veya 114'ü ara.
+
+[AKREP SOKMASI]
+Belirtiler: Şiddetli lokal ağrı, ödem, kas krampları, titreme, karıncalanma, bulantı, nadiren nöbet.
+Müdahale: Bölgeyi hareketsiz tut; soğuk kompres; dolaşımı bozmayacak bandaj; yara üzerine müdahale ETME; 112'yi ara.
+
+[ARI SOKMASI]
+1. İğneyi tırnak ya da kredi kartıyla KAZIYARAK çıkar — sıkıştırma; zehir kesesi patlar.
+2. Bölgeye buz (havluya sarılı) uygula.
+3. Kaşıntı için oral antihistaminik; ağrı için parasetamol veya ibuprofen.
+4. Sabun-suyla yıka.
+5. Nefes darlığı, boğaz/dil şişmesi → ANAFİLAKSİ: HEMEN 112.
+
+[GENEL BÖCEK ISIRIKLARI]
+İğneyi kazetle çıkar; buz uygula; antihistaminik al; anafilaksi belirtilerinde 112.
+
+[KENEBİTİ — AHA/Red Cross 2024]
+Keneyi deriye en yakın noktadan sivri uçlu cımbızla kavra; düz ve sabit çekerek çıkar — büküp döndürme. Çıkardıktan sonra sabun-su ile temizle; kafası kopup kaldıysa steril iğneyle çıkar. Kene maruziyet bölgesine ve süresine göre Lyme hastalığı için doktor değerlendirmesi.
+
+========================================
+BÖLÜM 22: HAYVAN ISIRMASI VE KUDUZ
+========================================
+
+[İLKYARDIM]
+1. Yarayı sabun-ılık suyla en az 5 dakika iyice yıka.
+2. Kanama varsa temiz bezle durdur.
+3. Antiseptik merhem; steril bandajla kapat.
+4. Kuduz şüphesi (vahşi hayvan, başıboş köpek, yarasa): DERHAL acil servis veya 112.
+5. Son 10 yılda tetanos aşısı yoksa → tetanos profilaksisi.
+6. Enfeksiyon belirtilerini (kızarıklık, şişlik, ısı, akıntı, ateş) izle.
+
+========================================
+BÖLÜM 23: DELİCİ GÖĞÜS VE KARIN YARALANMALARI
+========================================
+
+[DELİCİ GÖĞÜS YARALANMASI]
+Belirtiler: Ağrı, solunum güçlüğü, morarma, kan tükürme, yarada nefes alır görüntü (açık pnömotoraks).
+
+AHA 2024 First Aid Guidelines:
+- Açık göğüs yarasını açık havaya bırakmak, kuru gazlı bez koymak veya özel vented chest seal kullanmak — hepsinin makul olduğu belirtilmektedir.
+- Eski yöntem (bir tarafı kapalı, bir tarafı açık plastik sargı) hala uygulanabilir; nefes alırken hava girişini engelle, verirken serbest bırak.
+- Yarı oturur pozisyon (bilinçliyse); şok önlemleri; ağızdan hiçbir şey verme; 112.
+
+[DELİCİ KARIN YARALANMASI]
+1. ABC değerlendir; 112.
+2. Dışarı çıkan organları ASLA içeri sokma; geniş nemli temiz bezle ört.
+3. Sırtüstü yatır; bacakları bük; sıcak tut.
+4. Ağızdan yiyecek-içecek verme.
+
+========================================
+BÖLÜM 24: GÖZ, KULAK, BURUN YABANCI CİSİMLERİ
+========================================
+
+[GÖZE YABANCI CİSİM]
+- GÖZÜ OVATMA — cisim retinayla temas edebilir.
+- Küçük toz: Ilık suyla yavaşça duru; kırpıştır.
+- Kimyasal: 15–20 dakika DURMAKSIZIN bol su; göz doktoru.
+- Batık cisim (metal, cam): ÇIKARMA; steril bezle koru; göz doktoru.
+- Görme bulanıklığı, ışığa hassasiyet, şiddetli ağrı → acil.
+
+[KULAĞA YABANCI CİSİM]
+Sivri cisimle müdahale etme; su değdirme; tıbbi yardım.
+
+[BURUNA YABANCI CİSİM]
+Bir burun deliğini kapat; diğerinden kuvvetli üflemeyi dene; çıkmazsa tıbbi yardım.
+
+========================================
+BÖLÜM 25: KABURGA KIRIKLARI VE GÖĞÜS TRAVMASI
+========================================
+
+[BELİRTİLER]
+Nefes alırken artan ağrı; hassasiyet; solunum kısıtlılığı; morarma.
+
+[İLKYARDIM]
+- Rahat pozisyon ver (genellikle yarı oturur veya yaralı taraf üstüne yatış ağrıyı azaltır).
+- Ağrı için parasetamol; nefes egzersizinden kaçınma.
+- Nefes darlığı, siyanoz, kan tükürme → 112.
+- Flail chest (3+ kaburgada çift kırık): instabilite, paradoksal hareket → ciddi acil, 112.
+
+========================================
+BÖLÜM 26: BÖLGESEL TRAVMA NOTLARI
+========================================
+
+[TESTİS TORSIYON (ÜROLOJİK ACİL)]
+Ani şiddetli testis ağrısı (özellikle gençlerde) → testis torsiyonu olabilir; 6 saat içinde cerrahi gerekebilir.
+Yapılacak: HEMEN acile git; bekleme kabul edilemez — gecikme kalıcı kayba yol açar.
+Geçici: destekleyici iç çamaşır ve buz (yalnızca travma kaynağında).
+
+[KARIN AĞRISI]
+Apandisit uyarı belirtisi: Sağ alt kadran ağrısı (önce göbek çevresinde başlar, aşağı kayar), ateş, bulantı, yürüyünce artan ağrı → HEMEN hastaneye git.
+Genel yönetim: Berrak sıvılar; hafif gıdalar; kendi kendine ağrı kesici alma tanıyı maskeleyebilir.
+
+[VERTİGO]
+- Yavaşça yatır veya oturt; ani kalkmasını önle.
+- Gözleri bir noktaya sabitleme semptomu hafifletebilir.
+- Ani ciddi baş dönmesi + tek taraflı güçsüzlük + konuşma bozukluğu → FELÇ: 112.
+
+[HİPERTANSİYON KRİZİ]
+Şiddetli baş ağrısı + görme bozukluğu + göğüs ağrısı + çok yüksek tansiyon → Tıbbi acil.
+Müdahale: Sakinleştir; yarı oturur pozisyon; doktor kontrolü olmadan ekstra ilaç verme (ani düşüş felç riskini artırır); semptomlar şiddetliyse 112.
+
+========================================
+BÖLÜM 27: HASTA/YARALI TAŞIMA
+========================================
+
+[GENEL KURALLAR]
+- İlkyardımcı kendi sağlığını riske atmamalı.
+- Hasta mümkün olduğunca az hareket ettirilmeli.
+- Baş-boyun-gövde ekseni korunmalı.
+- Tüm hareketleri yönlendirecek bir komuta sorumlusu olmalı.
+- Güçlü kas grupları (bacak, kalça) kullanılmalı; bel bükülmemeli.
+
+[ACİL TAŞIMA TEKNİKLERİ]
+- Kucakta taşıma: Bilinçli hafif yaralılar/çocuklar; tek kişi.
+- Omuz desteği: Hafif yaralı, yürüyebilen hasta.
+- Sırtta taşıma: Bilinçli hasta.
+- İtfaiyeci yöntemi (firecarry): Bilinçsiz veya yürüyemeyen.
+- İki kişiyle altın beşik: Ciddi yaralanma yoksa.
+- Köprü tekniği (sedyeye alma): Omurilik şüphesinde 4 kişi; komutla kaldır.
+
+[SEDYE KURALLARI]
+- Hasta sarılıp bağlanmalı.
+- Baş gidiş yönünde.
+- Merdivende mümkün olduğunca yatay tut.
+- Güçlü kurtarıcı baş tarafında.
+
+========================================
+BÖLÜM 28: SOLUNUM YOLU ENFEKSİYONLARI VE SEMPTOM YÖNETİMİ
+========================================
+
+[ÖKSÜRÜK]
+- Bal (2 çay kaşığı ılık su/bitki çayıyla): Kanıta dayalı; günde 1–2 kez. 1 yaş altı bebeklere bal verme — botulizm riski.
+- Zencefil çayı, ıhlamur.
+- Buhar soluma (havlu örtüp eğil).
+- 3 haftadan uzun, kanlı, nefes darlığıyla gelen öksürük → doktora.
+
+[BOĞAZ AĞRISI]
+- Bol dinlenme, bol ılık sıvı.
+- Tuzlu su gargarası (1 bardak ılık suya ½ çay kaşığı tuz).
+- Ateş, şiddetli yutma güçlüğü, nefes darlığı → doktora (strep pharyngitis veya peritonsilar apse ekarte et).
+
+[BURUN TIKANIKLIĞI]
+- Buhar; fizyolojik serum burun yıkama.
+- Başı hafif yüksek yatış.
+- 10 günden uzun, ateşli → sinüzit şüphesi; doktora.
+
+[İSHAL VE DEHİDRASYON]
+- ORS (oral rehidrasyon solüsyonu): 1 L su + 6 çay kaşığı şeker + ½ çay kaşığı tuz.
+- BRAT diyeti: Muz (Banana), Pirinç (Rice), Elma püresi (Applesauce), Tost (Toast).
+- 48 saat içinde süt ürünleri yeme.
+- 2 günden fazla, kanlı, ateşle → doktora/acile.
+
+[ATEŞ YÖNETİMİ]
+- Bol sıvı; hafif giysiler.
+- Parasetamol veya ibuprofen; çocuklara aspirin VERME (Reye sendromu).
+- Ateş 39°C+, 5 günden fazla, boyun sertliği eşlik ediyorsa → doktora.
+- Bebek/küçük çocuklarda 38°C üstü → doktora.
+- Ateş kaynaklı havale (6 ay–6 yaş): Islak havlu ile sarma; düşmüyorsa oda sıcaklığı küvet; 112'yi ara.
+
+[BAŞ AĞRISI]
+- Bol su; sessiz, karanlık ortamda dinlenme.
+- Parasetamol, ibuprofen veya aspirin (18 yaş altına aspirin verme).
+- Kalp/böbrek hastasında ibuprofen ve NSAİİ'den kaç.
+- "Hayatımın en kötü baş ağrısı" (thunderclap), boyun sertliği, ateş, görme değişikliği, bilinç değişikliği → HEMEN 112 (beyin kanaması, menenjit olabilir).
+
+========================================
+BÖLÜM 29: CİLT SORUNLARI VE MORLUKlar
+========================================
+
+[ALERJİK DERİ REAKSIYONU / DÖKÜNTÜ]
+- Hidrokortizonlu krem; kalamin losyonu.
+- Oral antihistaminik (difenhidramin, loratadin, setirizin).
+- Soğuk kompres; yulaf ezmesi banyosu.
+- Yaygın, şiddetli veya nefes darlığıyla gelen döküntü → 112.
+
+[MORLUK]
+- İlk 48 saat: buz (havluya sarılı) 10–20 dakika; günde birkaç kez.
+- Şişlik varsa elastik bandaj.
+- Ağrı için parasetamol (aspirin pıhtılaşmayı yavaşlatır).
+- Nedensiz veya kendiliğinden oluşan morluklarda → tıbbi değerlendirme.
+
+[KIYMIK ÇIKARMA]
+- Bölgeyi sabun-suyla yıka; steril iğne/cımbızla yüzeye yaklaştır ve çıkar.
+- Çıkarma sonrası antiseptik; bandajla kapat.
+- Epsom tuzu: 1 bardak ılık suda eritilmiş tuz; 20–30 dk beklet — kıymığı yüzeye getirir.
+- Derin kıymık veya enfeksiyon belirtisi → tıbbi yardım.
+
+========================================
+BÖLÜM 30: DİŞ TRAVMASI
+========================================
+
+[KIRIK DİŞ VE AVSÜLEN DİŞ]
+1. Kırık parçaları temiz suyla duru.
+2. Kökten tamamen avsülen diş: Kıkırdak yüzeyine DOKUNMA; süt içinde veya yanak içinde tut; 30–60 dakika içinde diş hekimine ulaş (altın standart: dişi hemen yuvasına yeniden koy).
+3. Ağız yaralanmasında soğuk suyla duru.
+4. Şişlik için yanak dışına soğuk kompres.
+5. Ağrı için parasetamol; aspirin kanama riskini artırabilir.
+
+========================================
+ÖZEL NOT: 2024/2025 PROTOKOL DEĞİŞİKLİKLERİ (RAG ÖNCELİKLİ)
+========================================
+
+1. AHA/AAP 2025: Yetişkin ve pediatrik CPR hayat kurtarma zinciri tek çatı altında birleştirildi.
+2. AHA/AAP 2025: Bebekte iki başparmak kompresyon tekniği iki parmak tekniğine tercih edilmektedir.
+3. AHA/AAP 2025 (Çocukta boğulma): 5 sırt vuruşu + 5 karın itiği döngüsü (önceden yalnızca karın itiği).
+4. AHA/AAP 2025 (Bebekte boğulma): 5 sırt vuruşu + 5 göğüs itiği döngüsü; karın itiği önerilmez.
+5. AHA/AAP 2024 (Boğulma): Ventilasyon öncelikli (ABC), Heimlich artık önerilmez, servikal rutin immobilizasyon artık önerilmez.
+6. AHA/Red Cross 2024 (First Aid): Opioid aşırı dozu — CPR + ventilasyon + nalokson üçlüsü.
+7. AHA/Red Cross 2024 (First Aid): Açık göğüs yarası — havalandırmalı yara kapama ile açık bırakma veya kuru gazlı bez hepsi makul.
+8. BE-FAST inme değerlendirmesi (B=Denge, E=Gözler eklendi) FAST'a göre üstün bulunmaktadır.
+9. AAAAI/ACAAI 2023: Epinefrin sonrası hızlı tam yanıt varsa EMS aktivasyonu mutlak zorunluluk değil — ancak Türkiye pratiğinde 112 standart olarak çağrılmalıdır.
+10. AHA 2024 First Aid: Kene çıkarma için cımbız-düz çekme yöntemi (döndürme önerilmiyor) güncellendi.
+
+========================================
+KISALTMALAR
+========================================
+AED: Otomatik Dış Defibrilatör (Automated External Defibrillator)
+AHA: Amerikan Kalp Derneği (American Heart Association)
+BLS/TYD: Temel Yaşam Desteği (Basic Life Support)
+CPR/KPR: Kardiyopulmoner Resüsitasyon
+EAI: Epinefrin Oto-İnjektör (EpiPen)
+FBAO: Yabancı Cisim Hava Yolu Tıkanıklığı (Foreign Body Airway Obstruction)
+FAST/BE-FAST: İnme değerlendirme mnemonikleri
+GİS: Gastrointestinal Sistem
+IM: İntramusküler (kas içi enjeksiyon)
+ORS: Oral Rehidrasyon Solüsyonu
+RICE: Rest–Ice–Compression–Elevation (Burkulma tedavisi)
+SSS: Santral Sinir Sistemi
+TIA: Geçici İskemik Atak (Transient Ischemic Attack)
+WAO: Dünya Alerji Örgütü (World Allergy Organization)
+
+========================================
+ÖNEMLİ UYARI
+========================================
+Bu veri seti; T.C. Sağlık Bakanlığı protokolleri, AHA 2024-2025 kılavuzları ve uluslararası kanıta dayalı tıp kaynaklarından derlenen genel ilkyardım rehberi niteliğindedir. Tıbbi tanı veya tedavinin yerini alamaz. Her acil durumda önce 112'yi arayın. İlkyardım eğitimi alarak bu bilgileri uygulamalı olarak pekiştirin.

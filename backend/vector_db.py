@@ -1,40 +1,71 @@
+# -*- coding: utf-8 -*-
 """
-backend/vector_db.py
-====================
-Antigravity RAG Mimarisi - Vektör Veritabanı Modülü
+backend/vector_db.py — HayatKurtaran AI Vektör Veritabanı v2.0
+================================================================
+Modernize edilmiş RAG vektör arama motoru.
 
-Bu modül:
-  1. data/ klasöründeki .txt dosyalarını yükler
-  2. Metinleri anlamlı parçalara (semantic chunks) böler
-  3. sentence-transformers ile embedding oluşturur
-  4. FAISS üzerinde vektör indeksi kurar
-  5. get_context(query) ile ilgili chunk'ları döndürür
+Yenilikler (v2.0):
+  - Smart Chunker entegrasyonu (section-aware, overlap destekli)
+  - FAISS index disk cache (restart'ta yeniden hesaplama yok)
+  - Confidence score hesaplama (avg_confidence)
+  - Genişletilmiş acil kelime tespiti (40+ ifade)
+  - Query enhancement (günlük dil → medikal terim)
 """
 
 import os
 import re
+import hashlib
+import pickle
 import numpy as np  # type: ignore
 import faiss  # type: ignore
 from sentence_transformers import SentenceTransformer  # type: ignore
+from backend.chunker import chunk_directory  # type: ignore
 
 # ─── Konfigürasyon ─────────────────────────────────────────────────────────────
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+CACHE_DIR = os.path.join(os.path.dirname(__file__), "..", ".faiss_cache")
 MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"  # Türkçe desteği
-TOP_K = 20           # En alakalı kaç chunk dönüleceği
-SIMILARITY_THRESHOLD = 0.05  # Cosine benzerlik alt sınırı — düşük = geniş arama
+TOP_K = 5            # En alakalı kaç chunk — 5 yeterli, 20 halüsinasyon yaratır
+SIMILARITY_THRESHOLD = 0.40  # Cosine benzerlik alt sınırı — 0.40 altı = alakasız chunk, reddet
 
 # Acil tetikleyici kelimeler - bunlar algılandığında öncelikli uyarı dönülür
 CRITICAL_KEYWORDS = [
-    "kalp krizi", "kalp durdu", "nefes almıyor", "nefes durdu",
+    # --- Kardiyak ---
+    "kalp krizi", "kalp durdu", "kalp durması", "kalbim durdu",
+    "göğsümde ağrı", "göğüs ağrısı", "göğsümde baskı",
+    "kalbim çok hızlı", "kalbim duracak gibi",
+    # --- Solunum ---
+    "nefes almıyor", "nefes durdu", "nefes alamıyorum",
+    "nefes almak zor", "nefes darlığı", "boğuluyor", "boğulma",
+    # --- Bilinç ---
     "bilinç kaybı", "bilincini kaybetti", "bayıldı", "ölüyor",
-    "şiddetli kanama", "çok kan", "boğuluyor", "boğulma",
-    "anafilaksi", "alerjik şok", "inme", "felç"
+    "bilinci yok", "bilinci kapandı", "uyanmıyor",
+    # --- Kanama ---
+    "şiddetli kanama", "çok kan", "kan durmuyor",
+    "çok kan kaybediyor", "kan fışkırıyor",
+    # --- İnme / Felç ---
+    "inme", "felç", "yüzüm düştü", "yüzü düştü",
+    "kolum kalkmıyor", "dilim dönmüyor", "konuşamıyor",
+    # --- Alerjik / Anafilaksi ---
+    "anafilaksi", "alerjik şok", "boğazım şişiyor", "dilim şişiyor",
+    # --- Travma ---
+    "yüksekten düştü", "kafa travması", "kafasını çarptı",
+    "elektrik çarptı", "cereyana kapıldı",
+    # --- Zehirlenme ---
+    "zehir içti", "ilaç içti", "hapları yuttu",
+    # --- Su / Boğulma ---
+    "suya düştü", "suda boğulma",
+    # --- Çocuk / Bebek ---
+    "bebek nefes almıyor", "çocuk boğuluyor",
+    # --- Diğer ---
+    "morarıyor", "morardı", "havale geçiriyor",
+    "nöbet geçiriyor", "yılan ısırdı", "akrep soktu",
 ]
 
 # ─── Global Değişkenler (lazy-load ile doldurulur) ─────────────────────────────
 _model: SentenceTransformer = None
 _index: faiss.IndexFlatIP = None
-_chunks: list[dict] = []  # {"text": str, "source": str, "metadata": dict}
+_chunks: list[dict] = []
 
 
 def _load_model() -> SentenceTransformer:
@@ -47,69 +78,61 @@ def _load_model() -> SentenceTransformer:
     return _model
 
 
-def _load_and_chunk_data() -> list[dict]:
+def _compute_data_hash() -> str:
     """
-    data/ klasöründeki .txt dosyalarını yükler,
-    başlıkları ve içeriklerini anlamlı şekilde birleştirir.
+    data/ klasöründeki tüm .txt dosyalarının içerik hash'ini hesaplar.
+    Veri değiştiyse cache'i geçersiz kılmak için kullanılır.
     """
-    chunks = []
-    if not os.path.exists(DATA_DIR):
-        print(f"[VectorDB] UYARI: Veri dizini bulunamadı: {DATA_DIR}")
-        return chunks
-
-    txt_files = [f for f in os.listdir(DATA_DIR) if f.endswith(".txt")]
-    if not txt_files:
-        print("[VectorDB] UYARI: data/ klasöründe .txt dosyası bulunamadı.")
-        return chunks
-
+    hasher = hashlib.md5()
+    txt_files = sorted([f for f in os.listdir(DATA_DIR) if f.endswith(".txt")])
     for filename in txt_files:
         filepath = os.path.join(DATA_DIR, filename)
         try:
-            with open(filepath, "r", encoding="utf-8") as f:
-                content = f.read()
+            with open(filepath, "rb") as f:
+                hasher.update(f.read())
+        except Exception:
+            pass
+    return hasher.hexdigest()
 
-            raw_chunks = re.split(r'\n{2,}', content.strip())
-            
-            merged_chunks = []
-            current_title = ""
-            for chunk in raw_chunks:
-                chunk = chunk.strip()
-                if not chunk:
-                    continue
-                # Başlıkları yakalamak için (genelde tek satır ve kısa olur)
-                if '\n' not in chunk and len(chunk) < 100:
-                    current_title = chunk
-                else:
-                    if current_title:
-                        merged_chunks.append(current_title + "\n" + chunk)
-                        current_title = ""
-                    else:
-                        merged_chunks.append(chunk)
 
-            # Sonda kalan başlık varsa
-            if current_title:
-                merged_chunks.append(current_title)
+def _save_cache(index: faiss.IndexFlatIP, chunks: list[dict], data_hash: str):
+    """FAISS index ve chunk metadata'sını diske kaydeder."""
+    try:
+        os.makedirs(CACHE_DIR, exist_ok=True)
+        faiss.write_index(index, os.path.join(CACHE_DIR, "index.faiss"))
+        with open(os.path.join(CACHE_DIR, "chunks.pkl"), "wb") as f:
+            pickle.dump({"chunks": chunks, "hash": data_hash}, f)
+        print(f"[VectorDB] Cache kaydedildi: {len(chunks)} chunk")
+    except Exception as e:
+        print(f"[VectorDB] Cache kaydetme hatası: {e}")
 
-            for i, chunk_text in enumerate(merged_chunks):
-                if len(chunk_text) < 30:  # Çok kısa parçaları atla
-                    continue
 
-                # İlk satır genellikle başlıktır
-                first_line = chunk_text.split('\n')[0].strip()
-                chunks.append({
-                    "text": chunk_text,
-                    "source": filename.replace(".txt", ""),
-                    "title": first_line,
-                    "metadata": {
-                        "filename": filename,
-                        "chunk_index": i,
-                    }
-                })
-        except Exception as e:
-            print(f"[VectorDB] Dosya okunamadı: {filename} – {e}")
+def _load_cache(current_hash: str):
+    """
+    Disk cache'ten FAISS index ve chunk'ları yükler.
+    Eğer veri değişmişse (hash uyuşmuyorsa) None döner.
+    """
+    idx_path = os.path.join(CACHE_DIR, "index.faiss")
+    chunks_path = os.path.join(CACHE_DIR, "chunks.pkl")
 
-    print(f"[VectorDB] Toplam {len(chunks)} chunk yüklendi.")
-    return chunks
+    if not os.path.exists(idx_path) or not os.path.exists(chunks_path):
+        return None, None
+
+    try:
+        with open(chunks_path, "rb") as f:
+            cache_data = pickle.load(f)
+
+        if cache_data.get("hash") != current_hash:
+            print("[VectorDB] Veri değişmiş, cache geçersiz — yeniden oluşturulacak.")
+            return None, None
+
+        index = faiss.read_index(idx_path)
+        chunks = cache_data["chunks"]
+        print(f"[VectorDB] Cache'ten yüklendi: {len(chunks)} chunk")
+        return index, chunks
+    except Exception as e:
+        print(f"[VectorDB] Cache yükleme hatası: {e}")
+        return None, None
 
 
 def _build_index(chunks: list[dict]) -> faiss.IndexFlatIP:
@@ -132,13 +155,31 @@ def _build_index(chunks: list[dict]) -> faiss.IndexFlatIP:
 
 def initialize():
     """
-    Vektör veritabanını ilk kez veya yeniden başlatır.
-    Uygulama başlangıcında bir kez çağrılmalıdır.
+    Vektör veritabanını başlatır.
+    Önce disk cache kontrol eder, yoksa yeniden oluşturur ve cache'ler.
     """
     global _chunks, _index
-    _chunks = _load_and_chunk_data()
+
+    # Veri hash'ini hesapla
+    data_hash = _compute_data_hash()
+
+    # Disk cache dene
+    cached_index, cached_chunks = _load_cache(data_hash)
+    if cached_index is not None and cached_chunks is not None:
+        _index = cached_index
+        _chunks = cached_chunks
+        # Model'i de yükle (cache'ten gelse bile arama sırasında lazım)
+        _load_model()
+        return
+
+    # Cache yoksa yeniden oluştur (Smart Chunker kullanarak)
+    print("[VectorDB] Cache bulunamadı, yeniden oluşturuluyor...")
+    _chunks = chunk_directory(DATA_DIR)
+
     if _chunks:
         _index = _build_index(_chunks)
+        # Diske kaydet
+        _save_cache(_index, _chunks, data_hash)
     else:
         print("[VectorDB] UYARI: Chunk bulunamadı, indeks oluşturulamadı.")
 
@@ -159,34 +200,72 @@ def _enhance_query(query: str) -> str:
     """
     ql = query.lower().replace("ı", "i").replace("ş", "s").replace("ğ", "g").replace("ü", "u").replace("ö", "o").replace("ç", "c")
     ek = []
-    
-    if "yandi" in ql or "yakti" in ql or "yanik" in ql:
-        ek.append("yanık yanma termal isi hasarı")
-    if "kesti" in ql or "kaniyo" in ql or "kanama" in ql or "kanar" in ql:
-        ek.append("kesik kanama açık yara")
+
+    if "yandi" in ql or "yakti" in ql or "yanik" in ql or "kaynar" in ql:
+        ek.append("yanık yanma termal ısı hasarı derece")
+    if "kesti" in ql or "kesiti" in ql or "kesik" in ql or "kaniyo" in ql or "kanama" in ql or "kanar" in ql:
+        ek.append("kesik kanama açık yara baskı turnike")
+    if "pasli" in ql or "demir" in ql or "civi" in ql or "tetanoz" in ql:
+        ek.append("tetanoz enfeksiyon paslı açık yara aşı")
     if "bocek" in ql or "ari " in ql or "soktu" in ql or "isirdi" in ql or "siyan" in ql or "yilan" in ql or "akrep" in ql:
-        ek.append("ısırık sokma alerji anafilaksi hayvan zehir")
+        ek.append("ısırık sokma alerji anafilaksi hayvan zehir arı")
     if "nefes" in ql or "bogul" in ql or "tikandi" in ql or "yutam" in ql:
-        ek.append("boğulma heimlich astım hava yolu")
+        ek.append("boğulma heimlich astım hava yolu tıkanıklık")
     if "basim don" in ql or "bayil" in ql or "gozum karar" in ql or "bilinc" in ql:
         ek.append("bayılma senkop vertigo bilinç kaybı şok pozisyonu")
     if "carp" in ql or "dustu" in ql or "kirildi" in ql or "kaza" in ql:
-        ek.append("travma kırık incinme atel kafa kanaması")
+        ek.append("travma kırık incinme atel kafa kanaması omurga")
     if "zehir" in ql or "ilac icti" in ql or "mide" in ql or "kustu" in ql:
-        ek.append("zehirlenme kusma bulantı 114")
+        ek.append("zehirlenme kusma bulantı 114 karbon monoksit")
     if "seker" in ql or "diyabet" in ql or "hipogli" in ql:
-        ek.append("şeker düşmesi hipoglisemi diyabetik koma")
+        ek.append("şeker düşmesi hipoglisemi diyabetik koma glukoz")
     if "tansiyon" in ql or "bas agrisi" in ql:
-        ek.append("hipertansiyon baş ağrısı kan basıncı")
-        
+        ek.append("hipertansiyon baş ağrısı kan basıncı felç")
+    if "gogus" in ql or "kalp" in ql or "kalb" in ql:
+        ek.append("kalp krizi miyokart göğüs ağrısı CPR aspirin")
+    if "felc" in ql or "inme" in ql or "yuzum" in ql or "kolum" in ql:
+        ek.append("felç inme FAST BE-FAST konuşma bozukluğu")
+    if "cpr" in ql or "kalp masaji" in ql or "yasam destegi" in ql:
+        ek.append("CPR KPR kompresyon ventilasyon temel yaşam desteği AED")
+    if "bebek" in ql or "cocuk" in ql or "yeni dogan" in ql:
+        ek.append("bebek çocuk pediatrik yenidoğan")
+    if "burun" in ql and ("kan" in ql or "akiyor" in ql):
+        ek.append("burun kanaması epistaksis sıkma dik oturma")
+    if "nobeti" in ql or "sara" in ql or "epilepsi" in ql or "kasil" in ql:
+        ek.append("epilepsi nöbet sara koma pozisyonu")
+    if "astim" in ql or "hisilt" in ql or "inhaler" in ql:
+        ek.append("astım bronkospazm inhaler nefes darlığı")
+    if "kirik" in ql or "burkulma" in ql or "cikik" in ql:
+        ek.append("kırık burkulma çıkık atel RICE tespit")
+    if "sepsis" in ql or "enfeksiyon" in ql or "ates" in ql:
+        ek.append("sepsis enfeksiyon SOFA qSOFA antibiyotik şok")
+    if "travma" in ql or "kaza" in ql or "yaralanma" in ql:
+        ek.append("travma ATLS ABCDE birincil değerlendirme kanama")
+    if "gebe" in ql or "hamile" in ql or "dogum" in ql or "dogu" in ql:
+        ek.append("gebelik doğum preeklampsi eklampsi postpartum")
+    if "pnomot" in ql or "gogus" in ql or "akciger" in ql:
+        ek.append("pnömotoraks hemotoraks göğüs tüpü solunum")
+    if "emboli" in ql or "pulmoner" in ql or "dvt" in ql:
+        ek.append("pulmoner emboli DVT tromboz nefes darlığı")
+    if "toksik" in ql or "uyustur" in ql or "overdoz" in ql or "opiyat" in ql:
+        ek.append("toksidrom antidot nalokson zehirlenme opiyat overdoz")
+    if "tiroid" in ql or "tiroit" in ql or "guatr" in ql:
+        ek.append("tiroid tirotoksikoz hipotiroidi hipertiroidi TSH")
+    if "dka" in ql or "ketoasidoz" in ql:
+        ek.append("diyabetik ketoasidoz DKA insülin asidoz kussmaul")
+    if "kbrn" in ql or "kimyasal" in ql or "radyasyon" in ql or "biyolojik" in ql:
+        ek.append("KBRN kimyasal biyolojik radyasyon nükleer dekontaminasyon")
+    if "pediatr" in ql or "yenidogan" in ql or "nrp" in ql:
+        ek.append("pediatrik yenidoğan PALS NRP çocuk resüsitasyon")
+    if "intihar" in ql or "ozkiyim" in ql or "kendine zarar" in ql:
+        ek.append("intihar özkıyım psikiyatrik acil 182 risk değerlendirme")
+
     if ek:
-        # Eski sorgunun ardına zenginleştirilmiş kelimeleri ekleyerek 
-        # modelin doğru chunk'ı bulmasını garantile
         return query + " " + " ".join(ek)
     return query
 
 
-def get_context(query: str) -> tuple[str, list[dict], bool]:
+def get_context(query: str) -> tuple[str, list[dict], bool, float]:
     """
     Kullanıcı sorgusuna en alakalı metin parçalarını döndürür.
 
@@ -194,6 +273,7 @@ def get_context(query: str) -> tuple[str, list[dict], bool]:
         context_text (str): LLM'e gönderilecek birleşik bağlam metni
         sources (list[dict]): Kaynak bilgileri (kaynak gösterimi için)
         is_critical (bool): Sorgu kritik/acil durumu tetikliyor mu?
+        avg_confidence (float): Ortalama benzerlik skoru (0.0-1.0)
     """
     global _chunks, _index
 
@@ -202,7 +282,7 @@ def get_context(query: str) -> tuple[str, list[dict], bool]:
         initialize()
 
     if not _chunks or _index is None:
-        return "", [], is_critical_query(query)
+        return "", [], is_critical_query(query), 0.0
 
     is_critical = is_critical_query(query)
 
@@ -220,7 +300,6 @@ def get_context(query: str) -> tuple[str, list[dict], bool]:
     scores, indices = _index.search(query_embedding, actual_k)
 
     results = []
-    # Pyre2 tip engelini asmak icin:
     # pyre-ignore
     for score, idx in zip(scores[0], indices[0]):
         if idx < 0 or idx >= len(_chunks):
@@ -235,38 +314,55 @@ def get_context(query: str) -> tuple[str, list[dict], bool]:
         results.append(chunk)
 
     if not results:
-        return "", [], is_critical
+        return "", [], is_critical, 0.0
+
+    # Confidence score hesapla
+    avg_confidence = sum(r["similarity_score"] for r in results) / len(results)
 
     # Bağlam metnini oluştur
     context_parts = []
     sources = []
     for i, r in enumerate(results, 1):
-        context_parts.append(f"[Kaynak {i}: {r['source']} - {r['title']}]\n{r['text']}")
+        section_info = r.get("section", "")
+        sub_info = r.get("subsection", "")
+        label = f"{r['source']}"
+        if section_info:
+            label += f" > {section_info}"
+        if sub_info:
+            label += f" > {sub_info}"
+
+        context_parts.append(f"[Kaynak {i}: {label}]\n{r['text']}")
         sources.append({
-            "title": r["title"],
+            "title": r.get("title", ""),
             "source": r["source"],
-            "score": r["similarity_score"]
+            "section": section_info,
+            "subsection": sub_info,
+            "score": r["similarity_score"],
+            "keywords": r.get("keywords", []),
         })
 
     context_text = "\n\n---\n\n".join(context_parts)
-    return context_text, sources, is_critical
+    return context_text, sources, is_critical, avg_confidence
 
 
-# Modül doğrudan çalıştırıldığında test amaçlı kontrol
+# ─── Modül Test ────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     initialize()
     test_queries = [
         "Arı soktu ne yapmalıyım?",
         "Kalp durmuş ne yapacağım?",
-        "Kafadan düştü ne yapayım?",
-        "Nasıl kilo veririm?"
+        "Bebekte CPR nasıl yapılır?",
+        "Bitcoin nedir?",
+        "Yanık oldu ne yapmalıyım?",
     ]
     for q in test_queries:
-        ctx, srcs, crit = get_context(q)
+        ctx, srcs, crit, conf = get_context(q)
         print(f"\n{'='*60}")
         print(f"Sorgu: {q}")
         print(f"Kritik: {crit}")
-        print(f"Kaynaklar: {[s['title'] for s in srcs]}")
+        print(f"Confidence: {conf:.2f}")
+        print(f"Kaynak sayısı: {len(srcs)}")
+        if srcs:
+            print(f"En iyi kaynak: {srcs[0]['title']} (score: {srcs[0]['score']:.3f})")
         ctx_str = str(ctx)
-        # pyre-ignore
         print(f"Bağlam: {ctx_str[:200]}...")

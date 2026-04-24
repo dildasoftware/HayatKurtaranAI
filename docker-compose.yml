@@ -1,0 +1,20 @@
+# HayatKurtaranAI — Docker Compose
+version: "3.9"
+
+services:
+  hayatkurtaran:
+    build: .
+    container_name: hayatkurtaran-ai
+    ports:
+      - "8501:8501"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - PYTHONIOENCODING=utf-8
+    volumes:
+      - ./.faiss_cache:/app/.faiss_cache  # FAISS cache persist
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

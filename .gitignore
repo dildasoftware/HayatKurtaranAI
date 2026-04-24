@@ -16,6 +16,7 @@ env/
 # FAISS indeks dosyaları (yeniden oluşturulur)
 *.index
 *.faiss
+.faiss_cache/
 
 # Streamlit
 .streamlit/
@@ -28,3 +29,12 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Logs (runtime generated)
+logs/
+
+# Models (trained weights)
+models/
+
+# Temp folders
+temp_audio/
